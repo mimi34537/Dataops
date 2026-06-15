@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 from sqlalchemy import create_engine
-
+from sqlalchemy import text
 # ----------------------------------
 # CONFIG
 # ----------------------------------
@@ -81,37 +81,22 @@ products.to_csv("seed_output/products.csv", index=False)
 # ----------------------------------
 # LOAD POSTGRES TABLES
 # ----------------------------------
+# ----------------------------------
+# LOAD POSTGRES TABLES
+# ----------------------------------
 
 engine = create_engine(
     "postgresql://dataops:dataops@127.0.0.1:5433/oltp"
 )
 
-customers.to_sql(
-    "customers",
-    engine,
-    if_exists="replace",
-    index=False
-)
+with engine.begin() as conn:
+    conn.execute(text("DROP SCHEMA IF EXISTS public_staging CASCADE"))
+    conn.execute(text("DROP SCHEMA IF EXISTS public_intermediate CASCADE"))
+    conn.execute(text("DROP SCHEMA IF EXISTS public_marts CASCADE"))
 
-products.to_sql(
-    "products",
-    engine,
-    if_exists="replace",
-    index=False
-)
-
-orders.to_sql(
-    "orders",
-    engine,
-    if_exists="replace",
-    index=False
-)
-
-order_items.to_sql(
-    "order_items",
-    engine,
-    if_exists="replace",
-    index=False
-)
+customers.to_sql("customers", engine, if_exists="replace", index=False)
+products.to_sql("products", engine, if_exists="replace", index=False)
+orders.to_sql("orders", engine, if_exists="replace", index=False)
+order_items.to_sql("order_items", engine, if_exists="replace", index=False)
 
 print("Seed completed successfully.")

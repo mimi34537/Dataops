@@ -1,3 +1,27 @@
+checks for customers:
+  - row_count > 0
+  - missing_count(customer_id) = 0
+  - duplicate_count(customer_id) = 0
+
 checks for orders:
   - row_count > 0
   - missing_count(order_id) = 0
+  - missing_count(customer_id) = 0
+  - duplicate_count(order_id) = 0
+
+checks for products:
+  - row_count > 0
+  - missing_count(product_id) = 0
+  - duplicate_count(product_id) = 0
+
+checks for order_items:
+  - row_count > 0
+  - missing_count(item_id) = 0
+  - missing_count(order_id) = 0
+  - missing_count(product_id) = 0
+  - duplicate_count(item_id) = 0
+  - failed rows:
+      fail query: |
+        SELECT *
+        FROM order_items
+        WHERE unit_price < 0
