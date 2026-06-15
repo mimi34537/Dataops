@@ -1,0 +1,9 @@
+data_source dataops_postgres:
+  type: postgres
+  connection:
+    host: localhost
+    port: 5433
+    username: dataops
+    password: dataops
+    database: oltp
+    schema: public

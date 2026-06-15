@@ -1,0 +1,2242 @@
+[0m14:58:52.586361 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10efc5710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f06de50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f06e550>]}
+
+
+============================== 14:58:52.589950 | 2230ed58-fa66-4428-9e92-aabae61cac6e ==============================
+[0m14:58:52.589950 [info ] [MainThread]: Running with dbt=1.11.11
+[0m14:58:52.590338 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'empty': 'None', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'log_cache_events': 'False', 'no_print': 'None', 'partial_parse': 'True', 'profiles_dir': '/Users/mihasoarajoelisolo/.dbt', 'warn_error': 'None', 'indirect_selection': 'eager', 'debug': 'False', 'quiet': 'False', 'static_parser': 'True', 'cache_selected_only': 'False', 'write_json': 'True', 'log_path': 'logs', 'use_colors': 'True', 'target_path': 'None', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt debug --project-dir . --profiles-dir /Users/mihasoarajoelisolo/.dbt', 'introspect': 'True'}
+[0m14:58:52.600186 [info ] [MainThread]: dbt version: 1.11.11
+[0m14:58:52.600528 [info ] [MainThread]: python version: 3.11.7
+[0m14:58:52.600734 [info ] [MainThread]: python path: /Users/mihasoarajoelisolo/Downloads/Dataops/dbt-env/bin/python
+[0m14:58:52.600910 [info ] [MainThread]: os info: macOS-10.16-x86_64-i386-64bit
+[0m14:58:52.651104 [info ] [MainThread]: Using profiles dir at /Users/mihasoarajoelisolo/.dbt
+[0m14:58:52.651424 [info ] [MainThread]: Using profiles.yml file at /Users/mihasoarajoelisolo/.dbt/profiles.yml
+[0m14:58:52.651598 [info ] [MainThread]: Using dbt_project.yml file at ./dbt_project.yml
+[0m14:58:52.651867 [info ] [MainThread]: adapter type: postgres
+[0m14:58:52.652025 [info ] [MainThread]: adapter version: 1.10.0
+[0m14:58:52.733948 [info ] [MainThread]: Configuration:
+[0m14:58:52.734451 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:58:52.734871 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m14:58:52.735049 [info ] [MainThread]: Required dependencies:
+[0m14:58:52.735307 [debug] [MainThread]: Executing "git --help"
+[0m14:58:53.264185 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:58:53.264966 [debug] [MainThread]: STDERR: "b''"
+[0m14:58:53.265219 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:58:53.265440 [info ] [MainThread]: Connection:
+[0m14:58:53.265658 [info ] [MainThread]:   host: localhost
+[0m14:58:53.265821 [info ] [MainThread]:   port: 5433
+[0m14:58:53.265976 [info ] [MainThread]:   user: dataops
+[0m14:58:53.266125 [info ] [MainThread]:   database: oltp
+[0m14:58:53.266277 [info ] [MainThread]:   schema: public
+[0m14:58:53.266422 [info ] [MainThread]:   connect_timeout: 10
+[0m14:58:53.266571 [info ] [MainThread]:   role: None
+[0m14:58:53.266727 [info ] [MainThread]:   search_path: None
+[0m14:58:53.266874 [info ] [MainThread]:   keepalives_idle: 0
+[0m14:58:53.267018 [info ] [MainThread]:   sslmode: None
+[0m14:58:53.267166 [info ] [MainThread]:   sslcert: None
+[0m14:58:53.267308 [info ] [MainThread]:   sslkey: None
+[0m14:58:53.267458 [info ] [MainThread]:   sslrootcert: None
+[0m14:58:53.267609 [info ] [MainThread]:   application_name: dbt
+[0m14:58:53.267752 [info ] [MainThread]:   retries: 1
+[0m14:58:53.268154 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m14:58:53.410444 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m14:58:53.433871 [debug] [MainThread]: Using postgres connection "debug"
+[0m14:58:53.434128 [debug] [MainThread]: On debug: select 1 as id
+[0m14:58:53.434306 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:58:53.485464 [debug] [MainThread]: SQL status: SELECT 1 in 0.051 seconds
+[0m14:58:53.486045 [debug] [MainThread]: On debug: Close
+[0m14:58:53.486253 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m14:58:53.486446 [info ] [MainThread]: [32mAll checks passed![0m
+[0m14:58:53.574366 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 1.2530282, "process_in_blocks": "0", "process_kernel_time": 0.203243, "process_mem_max_rss": "128073728", "process_out_blocks": "0", "process_user_time": 0.937119}
+[0m14:58:53.574775 [debug] [MainThread]: Command `dbt debug` succeeded at 14:58:53.574705 after 1.25 seconds
+[0m14:58:53.574988 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m14:58:53.575205 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f097810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f097e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1107415d0>]}
+[0m14:58:53.575464 [debug] [MainThread]: Flushing usage events
+[0m14:58:54.033025 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:59:06.724081 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11306c0d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113172650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113172f90>]}
+
+
+============================== 14:59:06.727907 | f9c6206e-93b1-44b4-a696-c7639c2c1831 ==============================
+[0m14:59:06.727907 [info ] [MainThread]: Running with dbt=1.11.11
+[0m14:59:06.728299 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'quiet': 'False', 'write_json': 'True', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'invocation_command': 'dbt run --project-dir . --profiles-dir /Users/mihasoarajoelisolo/.dbt', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'use_experimental_parser': 'False', 'version_check': 'True', 'printer_width': '80', 'profiles_dir': '/Users/mihasoarajoelisolo/.dbt', 'warn_error': 'None', 'empty': 'False', 'log_format': 'default', 'target_path': 'None', 'no_print': 'None', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'partial_parse': 'True', 'introspect': 'True'}
+[0m14:59:06.848066 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f9c6206e-93b1-44b4-a696-c7639c2c1831', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112d21e90>]}
+[0m14:59:06.887420 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f9c6206e-93b1-44b4-a696-c7639c2c1831', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f9dfad0>]}
+[0m14:59:06.888226 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m14:59:06.953567 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m14:59:06.954131 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m14:59:06.954393 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'f9c6206e-93b1-44b4-a696-c7639c2c1831', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11491b990>]}
+[0m14:59:07.527698 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f9c6206e-93b1-44b4-a696-c7639c2c1831', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1149881d0>]}
+[0m14:59:07.565173 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m14:59:07.566404 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m14:59:07.572550 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f9c6206e-93b1-44b4-a696-c7639c2c1831', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114c180d0>]}
+[0m14:59:07.572839 [info ] [MainThread]: Found 4 models, 475 macros
+[0m14:59:07.573031 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f9c6206e-93b1-44b4-a696-c7639c2c1831', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114c757d0>]}
+[0m14:59:07.574066 [info ] [MainThread]: 
+[0m14:59:07.574256 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m14:59:07.574410 [info ] [MainThread]: 
+[0m14:59:07.574669 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:59:07.576811 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oltp'
+[0m14:59:07.577124 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oltp'
+[0m14:59:07.582650 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oltp'
+[0m14:59:07.604859 [debug] [ThreadPool]: Using postgres connection "list_oltp"
+[0m14:59:07.605098 [debug] [ThreadPool]: Using postgres connection "list_oltp"
+[0m14:59:07.605326 [debug] [ThreadPool]: Using postgres connection "list_oltp"
+[0m14:59:07.605516 [debug] [ThreadPool]: On list_oltp: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m14:59:07.605705 [debug] [ThreadPool]: On list_oltp: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m14:59:07.605887 [debug] [ThreadPool]: On list_oltp: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m14:59:07.606062 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:59:07.606243 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:59:07.606397 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:59:07.646209 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.040 seconds
+[0m14:59:07.646465 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.040 seconds
+[0m14:59:07.646654 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.041 seconds
+[0m14:59:07.647306 [debug] [ThreadPool]: On list_oltp: Close
+[0m14:59:07.647893 [debug] [ThreadPool]: On list_oltp: Close
+[0m14:59:07.648429 [debug] [ThreadPool]: On list_oltp: Close
+[0m14:59:07.649038 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_oltp, now create_oltp_public_staging)
+[0m14:59:07.649237 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_oltp, now create_oltp_public_marts)
+[0m14:59:07.649436 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_oltp, now create_oltp_public_intermediate)
+[0m14:59:07.649942 [debug] [ThreadPool]: Creating schema "database: "oltp"
+schema: "public_staging"
+"
+[0m14:59:07.650187 [debug] [ThreadPool]: Creating schema "database: "oltp"
+schema: "public_marts"
+"
+[0m14:59:07.650385 [debug] [ThreadPool]: Creating schema "database: "oltp"
+schema: "public_intermediate"
+"
+[0m14:59:07.653273 [debug] [ThreadPool]: Using postgres connection "create_oltp_public_staging"
+[0m14:59:07.654645 [debug] [ThreadPool]: Using postgres connection "create_oltp_public_marts"
+[0m14:59:07.655707 [debug] [ThreadPool]: Using postgres connection "create_oltp_public_intermediate"
+[0m14:59:07.655886 [debug] [ThreadPool]: On create_oltp_public_staging: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "create_oltp_public_staging"} */
+create schema if not exists "public_staging"
+[0m14:59:07.656067 [debug] [ThreadPool]: On create_oltp_public_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "create_oltp_public_marts"} */
+create schema if not exists "public_marts"
+[0m14:59:07.656237 [debug] [ThreadPool]: On create_oltp_public_intermediate: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "create_oltp_public_intermediate"} */
+create schema if not exists "public_intermediate"
+[0m14:59:07.656396 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:59:07.656545 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:59:07.656683 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:59:07.670579 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.014 seconds
+[0m14:59:07.670778 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.014 seconds
+[0m14:59:07.670936 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.015 seconds
+[0m14:59:07.671435 [debug] [ThreadPool]: On create_oltp_public_intermediate: COMMIT
+[0m14:59:07.671832 [debug] [ThreadPool]: On create_oltp_public_marts: COMMIT
+[0m14:59:07.672216 [debug] [ThreadPool]: On create_oltp_public_staging: COMMIT
+[0m14:59:07.672395 [debug] [ThreadPool]: Using postgres connection "create_oltp_public_intermediate"
+[0m14:59:07.672571 [debug] [ThreadPool]: Using postgres connection "create_oltp_public_marts"
+[0m14:59:07.672726 [debug] [ThreadPool]: Using postgres connection "create_oltp_public_staging"
+[0m14:59:07.672886 [debug] [ThreadPool]: On create_oltp_public_intermediate: COMMIT
+[0m14:59:07.673045 [debug] [ThreadPool]: On create_oltp_public_marts: COMMIT
+[0m14:59:07.673196 [debug] [ThreadPool]: On create_oltp_public_staging: COMMIT
+[0m14:59:07.674417 [debug] [ThreadPool]: SQL status: COMMIT in 0.001 seconds
+[0m14:59:07.674573 [debug] [ThreadPool]: SQL status: COMMIT in 0.001 seconds
+[0m14:59:07.674726 [debug] [ThreadPool]: SQL status: COMMIT in 0.001 seconds
+[0m14:59:07.674882 [debug] [ThreadPool]: On create_oltp_public_intermediate: Close
+[0m14:59:07.675045 [debug] [ThreadPool]: On create_oltp_public_marts: Close
+[0m14:59:07.675186 [debug] [ThreadPool]: On create_oltp_public_staging: Close
+[0m14:59:07.676171 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oltp_public_staging'
+[0m14:59:07.676460 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_oltp_public_staging, now list_oltp_public_marts)
+[0m14:59:07.679646 [debug] [ThreadPool]: Using postgres connection "list_oltp_public_staging"
+[0m14:59:07.679933 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_oltp_public_intermediate, now list_oltp_public_intermediate)
+[0m14:59:07.681042 [debug] [ThreadPool]: Using postgres connection "list_oltp_public_marts"
+[0m14:59:07.681237 [debug] [ThreadPool]: On list_oltp_public_staging: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp_public_staging"} */
+select
+      'oltp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'oltp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'oltp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_staging'
+  
+[0m14:59:07.682268 [debug] [ThreadPool]: Using postgres connection "list_oltp_public_intermediate"
+[0m14:59:07.682459 [debug] [ThreadPool]: On list_oltp_public_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp_public_marts"} */
+select
+      'oltp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_marts'
+    union all
+    select
+      'oltp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_marts'
+    union all
+    select
+      'oltp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_marts'
+  
+[0m14:59:07.682641 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:59:07.682815 [debug] [ThreadPool]: On list_oltp_public_intermediate: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp_public_intermediate"} */
+select
+      'oltp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_intermediate'
+    union all
+    select
+      'oltp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_intermediate'
+    union all
+    select
+      'oltp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_intermediate'
+  
+[0m14:59:07.682991 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:59:07.683198 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:59:07.698953 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.016 seconds
+[0m14:59:07.699136 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.016 seconds
+[0m14:59:07.699268 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.016 seconds
+[0m14:59:07.699778 [debug] [ThreadPool]: On list_oltp_public_marts: ROLLBACK
+[0m14:59:07.700228 [debug] [ThreadPool]: On list_oltp_public_staging: ROLLBACK
+[0m14:59:07.700705 [debug] [ThreadPool]: On list_oltp_public_intermediate: ROLLBACK
+[0m14:59:07.701588 [debug] [ThreadPool]: On list_oltp_public_staging: Close
+[0m14:59:07.701767 [debug] [ThreadPool]: On list_oltp_public_intermediate: Close
+[0m14:59:07.701916 [debug] [ThreadPool]: On list_oltp_public_marts: Close
+[0m14:59:07.704335 [debug] [MainThread]: Using postgres connection "master"
+[0m14:59:07.704568 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m14:59:07.704785 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:59:07.719727 [debug] [MainThread]: SQL status: SELECT 0 in 0.015 seconds
+[0m14:59:07.720275 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f9c6206e-93b1-44b4-a696-c7639c2c1831', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114a1f7d0>]}
+[0m14:59:07.720525 [debug] [MainThread]: On master: ROLLBACK
+[0m14:59:07.721207 [debug] [MainThread]: On master: COMMIT
+[0m14:59:07.721358 [debug] [MainThread]: Using postgres connection "master"
+[0m14:59:07.721495 [debug] [MainThread]: On master: COMMIT
+[0m14:59:07.722558 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m14:59:07.722708 [debug] [MainThread]: On master: Close
+[0m14:59:07.724896 [debug] [Thread-1 (]: Began running node model.dataops_project.stg_customers
+[0m14:59:07.725123 [debug] [Thread-2 (]: Began running node model.dataops_project.stg_orders
+[0m14:59:07.725366 [info ] [Thread-1 (]: 1 of 4 START sql view model public_staging.stg_customers ....................... [RUN]
+[0m14:59:07.725720 [info ] [Thread-2 (]: 2 of 4 START sql view model public_staging.stg_orders .......................... [RUN]
+[0m14:59:07.725941 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_oltp_public_intermediate, now model.dataops_project.stg_customers)
+[0m14:59:07.726132 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_oltp_public_marts, now model.dataops_project.stg_orders)
+[0m14:59:07.726341 [debug] [Thread-1 (]: Began compiling node model.dataops_project.stg_customers
+[0m14:59:07.726524 [debug] [Thread-2 (]: Began compiling node model.dataops_project.stg_orders
+[0m14:59:07.729990 [debug] [Thread-1 (]: Writing injected SQL for node "model.dataops_project.stg_customers"
+[0m14:59:07.731020 [debug] [Thread-2 (]: Writing injected SQL for node "model.dataops_project.stg_orders"
+[0m14:59:07.731680 [debug] [Thread-1 (]: Began executing node model.dataops_project.stg_customers
+[0m14:59:07.731914 [debug] [Thread-2 (]: Began executing node model.dataops_project.stg_orders
+[0m14:59:07.751732 [debug] [Thread-1 (]: Writing runtime sql for node "model.dataops_project.stg_customers"
+[0m14:59:07.753623 [debug] [Thread-2 (]: Writing runtime sql for node "model.dataops_project.stg_orders"
+[0m14:59:07.754230 [debug] [Thread-1 (]: Using postgres connection "model.dataops_project.stg_customers"
+[0m14:59:07.754457 [debug] [Thread-2 (]: Using postgres connection "model.dataops_project.stg_orders"
+[0m14:59:07.754646 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_customers"} */
+
+  create view "oltp"."public_staging"."stg_customers__dbt_tmp"
+    
+    
+  as (
+    select
+    customer_id,
+    customer_name,
+    city
+from public.customers
+  );
+[0m14:59:07.754848 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_orders"} */
+
+  create view "oltp"."public_staging"."stg_orders__dbt_tmp"
+    
+    
+  as (
+    select
+    order_id,
+    customer_id,
+    amount,
+    cast(order_date as date) as order_date
+from public.orders
+  );
+[0m14:59:07.755050 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:59:07.755237 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m14:59:07.770137 [debug] [Thread-1 (]: Postgres adapter: Postgres error: column "customer_name" does not exist
+LINE 9:     customer_name,
+            ^
+
+[0m14:59:07.770363 [debug] [Thread-2 (]: Postgres adapter: Postgres error: relation "public.orders" does not exist
+LINE 12: from public.orders
+              ^
+
+[0m14:59:07.770583 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: ROLLBACK
+[0m14:59:07.770768 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: ROLLBACK
+[0m14:59:07.771570 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: Close
+[0m14:59:07.771821 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: Close
+[0m14:59:07.777740 [debug] [Thread-2 (]: Database Error in model stg_orders (dbt_project/models/staging/stg_orders.sql)
+  relation "public.orders" does not exist
+  LINE 12: from public.orders
+                ^
+  compiled code at target/run/dataops_project/dbt_project/models/staging/stg_orders.sql
+[0m14:59:07.778499 [debug] [Thread-1 (]: Database Error in model stg_customers (dbt_project/models/staging/stg_customers.sql)
+  column "customer_name" does not exist
+  LINE 9:     customer_name,
+              ^
+  compiled code at target/run/dataops_project/dbt_project/models/staging/stg_customers.sql
+[0m14:59:07.779616 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f9c6206e-93b1-44b4-a696-c7639c2c1831', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114cab450>]}
+[0m14:59:07.779791 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f9c6206e-93b1-44b4-a696-c7639c2c1831', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114a58b90>]}
+[0m14:59:07.780160 [error] [Thread-2 (]: 2 of 4 ERROR creating sql view model public_staging.stg_orders ................. [[31mERROR[0m in 0.05s]
+[0m14:59:07.780535 [error] [Thread-1 (]: 1 of 4 ERROR creating sql view model public_staging.stg_customers .............. [[31mERROR[0m in 0.05s]
+[0m14:59:07.780889 [debug] [Thread-2 (]: Finished running node model.dataops_project.stg_orders
+[0m14:59:07.781181 [debug] [Thread-1 (]: Finished running node model.dataops_project.stg_customers
+[0m14:59:07.781475 [debug] [Thread-7 (]: Marking all children of 'model.dataops_project.stg_orders' to be skipped because of status 'error'.  Reason: Database Error in model stg_orders (dbt_project/models/staging/stg_orders.sql)
+  relation "public.orders" does not exist
+  LINE 12: from public.orders
+                ^
+  compiled code at target/run/dataops_project/dbt_project/models/staging/stg_orders.sql.
+[0m14:59:07.782031 [debug] [Thread-7 (]: Marking all children of 'model.dataops_project.stg_customers' to be skipped because of status 'error'.  Reason: Database Error in model stg_customers (dbt_project/models/staging/stg_customers.sql)
+  column "customer_name" does not exist
+  LINE 9:     customer_name,
+              ^
+  compiled code at target/run/dataops_project/dbt_project/models/staging/stg_customers.sql.
+[0m14:59:07.782396 [debug] [Thread-4 (]: Began running node model.dataops_project.int_orders_customers
+[0m14:59:07.782674 [info ] [Thread-4 (]: 3 of 4 SKIP relation public_intermediate.int_orders_customers .................. [[33mSKIP[0m]
+[0m14:59:07.782893 [debug] [Thread-4 (]: Finished running node model.dataops_project.int_orders_customers
+[0m14:59:07.783191 [debug] [Thread-2 (]: Began running node model.dataops_project.mart_sales_by_city
+[0m14:59:07.783410 [info ] [Thread-2 (]: 4 of 4 SKIP relation public_marts.mart_sales_by_city ........................... [[33mSKIP[0m]
+[0m14:59:07.783646 [debug] [Thread-2 (]: Finished running node model.dataops_project.mart_sales_by_city
+[0m14:59:07.784255 [debug] [MainThread]: On master: COMMIT
+[0m14:59:07.784441 [debug] [MainThread]: Using postgres connection "master"
+[0m14:59:07.784583 [debug] [MainThread]: On master: COMMIT
+[0m14:59:07.784734 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:59:07.795394 [debug] [MainThread]: SQL status: COMMIT in 0.011 seconds
+[0m14:59:07.795682 [debug] [MainThread]: On master: Close
+[0m14:59:07.795927 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:59:07.796073 [debug] [MainThread]: Connection 'model.dataops_project.stg_customers' was properly closed.
+[0m14:59:07.796213 [debug] [MainThread]: Connection 'model.dataops_project.stg_orders' was properly closed.
+[0m14:59:07.796354 [debug] [MainThread]: Connection 'create_oltp_public_marts' was properly closed.
+[0m14:59:07.796488 [debug] [MainThread]: Connection 'list_oltp_public_staging' was properly closed.
+[0m14:59:07.796702 [info ] [MainThread]: 
+[0m14:59:07.796889 [info ] [MainThread]: Finished running 1 table model, 3 view models in 0 hours 0 minutes and 0.22 seconds (0.22s).
+[0m14:59:07.797335 [debug] [MainThread]: Command end result
+[0m14:59:07.815279 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m14:59:07.816217 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m14:59:07.819453 [debug] [MainThread]: Wrote artifact RunExecutionResult to ./target/run_results.json
+[0m14:59:07.819629 [info ] [MainThread]: 
+[0m14:59:07.819835 [info ] [MainThread]: [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m
+[0m14:59:07.820001 [info ] [MainThread]: 
+[0m14:59:07.820201 [error] [MainThread]: [31mFailure in model stg_orders (dbt_project/models/staging/stg_orders.sql)[0m
+[0m14:59:07.820403 [error] [MainThread]:   Database Error in model stg_orders (dbt_project/models/staging/stg_orders.sql)
+  relation "public.orders" does not exist
+  LINE 12: from public.orders
+                ^
+  compiled code at target/run/dataops_project/dbt_project/models/staging/stg_orders.sql
+[0m14:59:07.820573 [info ] [MainThread]: 
+[0m14:59:07.820747 [info ] [MainThread]:   compiled code at target/compiled/dataops_project/dbt_project/models/staging/stg_orders.sql
+[0m14:59:07.820906 [info ] [MainThread]: 
+[0m14:59:07.821089 [error] [MainThread]: [31mFailure in model stg_customers (dbt_project/models/staging/stg_customers.sql)[0m
+[0m14:59:07.821519 [error] [MainThread]:   Database Error in model stg_customers (dbt_project/models/staging/stg_customers.sql)
+  column "customer_name" does not exist
+  LINE 9:     customer_name,
+              ^
+  compiled code at target/run/dataops_project/dbt_project/models/staging/stg_customers.sql
+[0m14:59:07.821730 [info ] [MainThread]: 
+[0m14:59:07.821926 [info ] [MainThread]:   compiled code at target/compiled/dataops_project/dbt_project/models/staging/stg_customers.sql
+[0m14:59:07.822093 [info ] [MainThread]: 
+[0m14:59:07.822284 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=2 SKIP=2 NO-OP=0 TOTAL=4
+[0m14:59:07.824417 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.1703583, "process_in_blocks": "0", "process_kernel_time": 0.219585, "process_mem_max_rss": "144060416", "process_out_blocks": "0", "process_user_time": 1.719488}
+[0m14:59:07.824671 [debug] [MainThread]: Command `dbt run` failed at 14:59:07.824622 after 1.17 seconds
+[0m14:59:07.824892 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113076110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10da01210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11306bcd0>]}
+[0m14:59:07.825097 [debug] [MainThread]: Flushing usage events
+[0m14:59:08.261967 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:02:10.720842 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113230090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113314390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113337d10>]}
+
+
+============================== 15:02:10.724536 | 7b8632bb-0226-4052-9e9e-4772938914ba ==============================
+[0m15:02:10.724536 [info ] [MainThread]: Running with dbt=1.11.11
+[0m15:02:10.724933 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'invocation_command': 'dbt run --project-dir . --profiles-dir /Users/mihasoarajoelisolo/.dbt', 'quiet': 'False', 'warn_error': 'None', 'introspect': 'True', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'indirect_selection': 'eager', 'version_check': 'True', 'printer_width': '80', 'log_format': 'default', 'use_colors': 'True', 'write_json': 'True', 'empty': 'False', 'profiles_dir': '/Users/mihasoarajoelisolo/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'use_experimental_parser': 'False', 'log_path': 'logs', 'log_cache_events': 'False', 'static_parser': 'True', 'fail_fast': 'False', 'no_print': 'None'}
+[0m15:02:10.854030 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7b8632bb-0226-4052-9e9e-4772938914ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113bed710>]}
+[0m15:02:10.892528 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7b8632bb-0226-4052-9e9e-4772938914ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fb8eb50>]}
+[0m15:02:10.893191 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:02:10.960971 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m15:02:11.018347 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:02:11.018629 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m15:02:11.018787 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:02:11.033399 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7b8632bb-0226-4052-9e9e-4772938914ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1132c3650>]}
+[0m15:02:11.099601 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m15:02:11.100921 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m15:02:11.107114 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7b8632bb-0226-4052-9e9e-4772938914ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114b39850>]}
+[0m15:02:11.107392 [info ] [MainThread]: Found 4 models, 475 macros
+[0m15:02:11.107585 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7b8632bb-0226-4052-9e9e-4772938914ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114b20650>]}
+[0m15:02:11.108644 [info ] [MainThread]: 
+[0m15:02:11.108840 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:02:11.108997 [info ] [MainThread]: 
+[0m15:02:11.109283 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:02:11.111480 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oltp'
+[0m15:02:11.111762 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oltp'
+[0m15:02:11.112022 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oltp'
+[0m15:02:11.142045 [debug] [ThreadPool]: Using postgres connection "list_oltp"
+[0m15:02:11.142296 [debug] [ThreadPool]: Using postgres connection "list_oltp"
+[0m15:02:11.142506 [debug] [ThreadPool]: Using postgres connection "list_oltp"
+[0m15:02:11.142715 [debug] [ThreadPool]: On list_oltp: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:02:11.142910 [debug] [ThreadPool]: On list_oltp: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:02:11.143089 [debug] [ThreadPool]: On list_oltp: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:02:11.143261 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:02:11.143427 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:02:11.143587 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:02:11.179932 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.036 seconds
+[0m15:02:11.180199 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.037 seconds
+[0m15:02:11.180862 [debug] [ThreadPool]: On list_oltp: Close
+[0m15:02:11.181043 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.038 seconds
+[0m15:02:11.181569 [debug] [ThreadPool]: On list_oltp: Close
+[0m15:02:11.182175 [debug] [ThreadPool]: On list_oltp: Close
+[0m15:02:11.183114 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_oltp, now list_oltp_public_marts)
+[0m15:02:11.183359 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_oltp, now list_oltp_public_intermediate)
+[0m15:02:11.183604 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_oltp, now list_oltp_public_staging)
+[0m15:02:11.186803 [debug] [ThreadPool]: Using postgres connection "list_oltp_public_marts"
+[0m15:02:11.187922 [debug] [ThreadPool]: Using postgres connection "list_oltp_public_intermediate"
+[0m15:02:11.188987 [debug] [ThreadPool]: Using postgres connection "list_oltp_public_staging"
+[0m15:02:11.189195 [debug] [ThreadPool]: On list_oltp_public_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp_public_marts"} */
+select
+      'oltp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_marts'
+    union all
+    select
+      'oltp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_marts'
+    union all
+    select
+      'oltp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_marts'
+  
+[0m15:02:11.189407 [debug] [ThreadPool]: On list_oltp_public_intermediate: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp_public_intermediate"} */
+select
+      'oltp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_intermediate'
+    union all
+    select
+      'oltp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_intermediate'
+    union all
+    select
+      'oltp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_intermediate'
+  
+[0m15:02:11.189634 [debug] [ThreadPool]: On list_oltp_public_staging: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp_public_staging"} */
+select
+      'oltp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'oltp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'oltp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_staging'
+  
+[0m15:02:11.189815 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:02:11.189966 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:02:11.190115 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:02:11.207155 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.017 seconds
+[0m15:02:11.207322 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.017 seconds
+[0m15:02:11.207817 [debug] [ThreadPool]: On list_oltp_public_intermediate: ROLLBACK
+[0m15:02:11.207987 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.018 seconds
+[0m15:02:11.208453 [debug] [ThreadPool]: On list_oltp_public_staging: ROLLBACK
+[0m15:02:11.208924 [debug] [ThreadPool]: On list_oltp_public_marts: ROLLBACK
+[0m15:02:11.209070 [debug] [ThreadPool]: On list_oltp_public_intermediate: Close
+[0m15:02:11.209499 [debug] [ThreadPool]: On list_oltp_public_staging: Close
+[0m15:02:11.209641 [debug] [ThreadPool]: On list_oltp_public_marts: Close
+[0m15:02:11.211974 [debug] [MainThread]: Using postgres connection "master"
+[0m15:02:11.212239 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m15:02:11.212464 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:02:11.227473 [debug] [MainThread]: SQL status: SELECT 0 in 0.015 seconds
+[0m15:02:11.227966 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7b8632bb-0226-4052-9e9e-4772938914ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114f8afd0>]}
+[0m15:02:11.228187 [debug] [MainThread]: On master: ROLLBACK
+[0m15:02:11.228674 [debug] [MainThread]: On master: COMMIT
+[0m15:02:11.228820 [debug] [MainThread]: Using postgres connection "master"
+[0m15:02:11.228949 [debug] [MainThread]: On master: COMMIT
+[0m15:02:11.229701 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m15:02:11.229864 [debug] [MainThread]: On master: Close
+[0m15:02:11.231401 [debug] [Thread-1 (]: Began running node model.dataops_project.stg_customers
+[0m15:02:11.231715 [debug] [Thread-2 (]: Began running node model.dataops_project.stg_orders
+[0m15:02:11.231955 [info ] [Thread-1 (]: 1 of 4 START sql view model public_staging.stg_customers ....................... [RUN]
+[0m15:02:11.232231 [info ] [Thread-2 (]: 2 of 4 START sql view model public_staging.stg_orders .......................... [RUN]
+[0m15:02:11.232467 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_oltp_public_marts, now model.dataops_project.stg_customers)
+[0m15:02:11.232652 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_oltp_public_intermediate, now model.dataops_project.stg_orders)
+[0m15:02:11.232825 [debug] [Thread-1 (]: Began compiling node model.dataops_project.stg_customers
+[0m15:02:11.232989 [debug] [Thread-2 (]: Began compiling node model.dataops_project.stg_orders
+[0m15:02:11.236387 [debug] [Thread-1 (]: Writing injected SQL for node "model.dataops_project.stg_customers"
+[0m15:02:11.237435 [debug] [Thread-2 (]: Writing injected SQL for node "model.dataops_project.stg_orders"
+[0m15:02:11.237769 [debug] [Thread-1 (]: Began executing node model.dataops_project.stg_customers
+[0m15:02:11.243546 [debug] [Thread-2 (]: Began executing node model.dataops_project.stg_orders
+[0m15:02:11.257526 [debug] [Thread-1 (]: Writing runtime sql for node "model.dataops_project.stg_customers"
+[0m15:02:11.259418 [debug] [Thread-2 (]: Writing runtime sql for node "model.dataops_project.stg_orders"
+[0m15:02:11.259896 [debug] [Thread-1 (]: Using postgres connection "model.dataops_project.stg_customers"
+[0m15:02:11.260100 [debug] [Thread-2 (]: Using postgres connection "model.dataops_project.stg_orders"
+[0m15:02:11.260306 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_customers"} */
+
+  create view "oltp"."public_staging"."stg_customers__dbt_tmp"
+    
+    
+  as (
+    select
+    customer_id,
+    customer_name,
+    city
+from public.customers
+  );
+[0m15:02:11.260489 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_orders"} */
+
+  create view "oltp"."public_staging"."stg_orders__dbt_tmp"
+    
+    
+  as (
+    select
+    order_id,
+    customer_id,
+    amount,
+    cast(order_date as date) as order_date
+from public.orders
+  );
+[0m15:02:11.260680 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:02:11.260859 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m15:02:11.272346 [debug] [Thread-1 (]: Postgres adapter: Postgres error: column "customer_name" does not exist
+LINE 9:     customer_name,
+            ^
+
+[0m15:02:11.272548 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: ROLLBACK
+[0m15:02:11.273117 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: Close
+[0m15:02:11.274166 [debug] [Thread-2 (]: Postgres adapter: Postgres error: column "amount" does not exist
+LINE 10:     amount,
+             ^
+
+[0m15:02:11.274354 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: ROLLBACK
+[0m15:02:11.274985 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: Close
+[0m15:02:11.278809 [debug] [Thread-2 (]: Database Error in model stg_orders (dbt_project/models/staging/stg_orders.sql)
+  column "amount" does not exist
+  LINE 10:     amount,
+               ^
+  compiled code at target/run/dataops_project/dbt_project/models/staging/stg_orders.sql
+[0m15:02:11.279938 [debug] [Thread-1 (]: Database Error in model stg_customers (dbt_project/models/staging/stg_customers.sql)
+  column "customer_name" does not exist
+  LINE 9:     customer_name,
+              ^
+  compiled code at target/run/dataops_project/dbt_project/models/staging/stg_customers.sql
+[0m15:02:11.280608 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7b8632bb-0226-4052-9e9e-4772938914ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114efd2d0>]}
+[0m15:02:11.280778 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7b8632bb-0226-4052-9e9e-4772938914ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114f6fc90>]}
+[0m15:02:11.281098 [error] [Thread-2 (]: 2 of 4 ERROR creating sql view model public_staging.stg_orders ................. [[31mERROR[0m in 0.05s]
+[0m15:02:11.281442 [error] [Thread-1 (]: 1 of 4 ERROR creating sql view model public_staging.stg_customers .............. [[31mERROR[0m in 0.05s]
+[0m15:02:11.281751 [debug] [Thread-2 (]: Finished running node model.dataops_project.stg_orders
+[0m15:02:11.282009 [debug] [Thread-1 (]: Finished running node model.dataops_project.stg_customers
+[0m15:02:11.282261 [debug] [Thread-7 (]: Marking all children of 'model.dataops_project.stg_orders' to be skipped because of status 'error'.  Reason: Database Error in model stg_orders (dbt_project/models/staging/stg_orders.sql)
+  column "amount" does not exist
+  LINE 10:     amount,
+               ^
+  compiled code at target/run/dataops_project/dbt_project/models/staging/stg_orders.sql.
+[0m15:02:11.282797 [debug] [Thread-7 (]: Marking all children of 'model.dataops_project.stg_customers' to be skipped because of status 'error'.  Reason: Database Error in model stg_customers (dbt_project/models/staging/stg_customers.sql)
+  column "customer_name" does not exist
+  LINE 9:     customer_name,
+              ^
+  compiled code at target/run/dataops_project/dbt_project/models/staging/stg_customers.sql.
+[0m15:02:11.283207 [debug] [Thread-4 (]: Began running node model.dataops_project.int_orders_customers
+[0m15:02:11.283487 [info ] [Thread-4 (]: 3 of 4 SKIP relation public_intermediate.int_orders_customers .................. [[33mSKIP[0m]
+[0m15:02:11.283721 [debug] [Thread-4 (]: Finished running node model.dataops_project.int_orders_customers
+[0m15:02:11.284038 [debug] [Thread-2 (]: Began running node model.dataops_project.mart_sales_by_city
+[0m15:02:11.284259 [info ] [Thread-2 (]: 4 of 4 SKIP relation public_marts.mart_sales_by_city ........................... [[33mSKIP[0m]
+[0m15:02:11.284500 [debug] [Thread-2 (]: Finished running node model.dataops_project.mart_sales_by_city
+[0m15:02:11.285103 [debug] [MainThread]: On master: COMMIT
+[0m15:02:11.285275 [debug] [MainThread]: Using postgres connection "master"
+[0m15:02:11.285408 [debug] [MainThread]: On master: COMMIT
+[0m15:02:11.285533 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:02:11.297353 [debug] [MainThread]: SQL status: COMMIT in 0.012 seconds
+[0m15:02:11.297539 [debug] [MainThread]: On master: Close
+[0m15:02:11.297728 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:02:11.297858 [debug] [MainThread]: Connection 'model.dataops_project.stg_customers' was properly closed.
+[0m15:02:11.297979 [debug] [MainThread]: Connection 'model.dataops_project.stg_orders' was properly closed.
+[0m15:02:11.298098 [debug] [MainThread]: Connection 'list_oltp_public_staging' was properly closed.
+[0m15:02:11.298284 [info ] [MainThread]: 
+[0m15:02:11.298453 [info ] [MainThread]: Finished running 1 table model, 3 view models in 0 hours 0 minutes and 0.19 seconds (0.19s).
+[0m15:02:11.298919 [debug] [MainThread]: Command end result
+[0m15:02:11.317032 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m15:02:11.317999 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m15:02:11.321001 [debug] [MainThread]: Wrote artifact RunExecutionResult to ./target/run_results.json
+[0m15:02:11.321180 [info ] [MainThread]: 
+[0m15:02:11.321387 [info ] [MainThread]: [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m
+[0m15:02:11.321549 [info ] [MainThread]: 
+[0m15:02:11.321743 [error] [MainThread]: [31mFailure in model stg_orders (dbt_project/models/staging/stg_orders.sql)[0m
+[0m15:02:11.321932 [error] [MainThread]:   Database Error in model stg_orders (dbt_project/models/staging/stg_orders.sql)
+  column "amount" does not exist
+  LINE 10:     amount,
+               ^
+  compiled code at target/run/dataops_project/dbt_project/models/staging/stg_orders.sql
+[0m15:02:11.322081 [info ] [MainThread]: 
+[0m15:02:11.322250 [info ] [MainThread]:   compiled code at target/compiled/dataops_project/dbt_project/models/staging/stg_orders.sql
+[0m15:02:11.322400 [info ] [MainThread]: 
+[0m15:02:11.322575 [error] [MainThread]: [31mFailure in model stg_customers (dbt_project/models/staging/stg_customers.sql)[0m
+[0m15:02:11.322755 [error] [MainThread]:   Database Error in model stg_customers (dbt_project/models/staging/stg_customers.sql)
+  column "customer_name" does not exist
+  LINE 9:     customer_name,
+              ^
+  compiled code at target/run/dataops_project/dbt_project/models/staging/stg_customers.sql
+[0m15:02:11.322899 [info ] [MainThread]: 
+[0m15:02:11.323064 [info ] [MainThread]:   compiled code at target/compiled/dataops_project/dbt_project/models/staging/stg_customers.sql
+[0m15:02:11.323206 [info ] [MainThread]: 
+[0m15:02:11.323371 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=2 SKIP=2 NO-OP=0 TOTAL=4
+[0m15:02:11.325703 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.6948263, "process_in_blocks": "0", "process_kernel_time": 0.208175, "process_mem_max_rss": "138113024", "process_out_blocks": "0", "process_user_time": 1.215957}
+[0m15:02:11.325936 [debug] [MainThread]: Command `dbt run` failed at 15:02:11.325895 after 0.70 seconds
+[0m15:02:11.326171 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114872190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10da68dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10da68d50>]}
+[0m15:02:11.326363 [debug] [MainThread]: Flushing usage events
+[0m15:02:11.754558 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:05:03.582904 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f65cc10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f73be50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f5b9a90>]}
+
+
+============================== 15:05:03.587286 | 32533387-36d6-49ee-8455-48bec2c94531 ==============================
+[0m15:05:03.587286 [info ] [MainThread]: Running with dbt=1.11.11
+[0m15:05:03.587710 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'warn_error': 'None', 'quiet': 'False', 'no_print': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'invocation_command': 'dbt run --project-dir . --profiles-dir /Users/mihasoarajoelisolo/.dbt', 'partial_parse': 'True', 'write_json': 'True', 'version_check': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'profiles_dir': '/Users/mihasoarajoelisolo/.dbt', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'target_path': 'None', 'introspect': 'True', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'log_path': 'logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m15:05:05.827790 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '32533387-36d6-49ee-8455-48bec2c94531', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f741350>]}
+[0m15:05:05.865845 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '32533387-36d6-49ee-8455-48bec2c94531', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c007c10>]}
+[0m15:05:05.866500 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:05:06.011658 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m15:05:06.069118 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 1 files added, 3 files changed.
+[0m15:05:06.069562 [debug] [MainThread]: Partial parsing: added file: dataops_project://dbt_project/models/marts/mart_orders_by_country.sql
+[0m15:05:06.069771 [debug] [MainThread]: Partial parsing: deleted file: dataops_project://dbt_project/models/marts/mart_sales_by_city.sql
+[0m15:05:06.070002 [debug] [MainThread]: Partial parsing: updated file: dataops_project://dbt_project/models/staging/stg_orders.sql
+[0m15:05:06.070223 [debug] [MainThread]: Partial parsing: updated file: dataops_project://dbt_project/models/staging/stg_customers.sql
+[0m15:05:06.070442 [debug] [MainThread]: Partial parsing: updated file: dataops_project://dbt_project/models/intermediate/int_orders_customers.sql
+[0m15:05:06.255283 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '32533387-36d6-49ee-8455-48bec2c94531', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1100e3510>]}
+[0m15:05:06.291591 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m15:05:06.293208 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m15:05:06.300490 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '32533387-36d6-49ee-8455-48bec2c94531', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11104eb90>]}
+[0m15:05:06.300880 [info ] [MainThread]: Found 4 models, 475 macros
+[0m15:05:06.301095 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '32533387-36d6-49ee-8455-48bec2c94531', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f316010>]}
+[0m15:05:06.302414 [info ] [MainThread]: 
+[0m15:05:06.302634 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:05:06.302799 [info ] [MainThread]: 
+[0m15:05:06.303071 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:05:06.305319 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oltp'
+[0m15:05:06.305649 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oltp'
+[0m15:05:06.311687 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oltp'
+[0m15:05:06.335414 [debug] [ThreadPool]: Using postgres connection "list_oltp"
+[0m15:05:06.335654 [debug] [ThreadPool]: Using postgres connection "list_oltp"
+[0m15:05:06.335856 [debug] [ThreadPool]: Using postgres connection "list_oltp"
+[0m15:05:06.336027 [debug] [ThreadPool]: On list_oltp: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:05:06.336194 [debug] [ThreadPool]: On list_oltp: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:05:06.336353 [debug] [ThreadPool]: On list_oltp: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:05:06.336510 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:05:06.336665 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:05:06.336822 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:05:06.812983 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.476 seconds
+[0m15:05:06.813273 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.477 seconds
+[0m15:05:06.813456 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.477 seconds
+[0m15:05:06.814160 [debug] [ThreadPool]: On list_oltp: Close
+[0m15:05:06.814711 [debug] [ThreadPool]: On list_oltp: Close
+[0m15:05:06.815239 [debug] [ThreadPool]: On list_oltp: Close
+[0m15:05:06.816315 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_oltp, now list_oltp_public_intermediate)
+[0m15:05:06.816635 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_oltp, now list_oltp_public_marts)
+[0m15:05:06.819892 [debug] [ThreadPool]: Using postgres connection "list_oltp_public_intermediate"
+[0m15:05:06.820167 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_oltp, now list_oltp_public_staging)
+[0m15:05:06.821292 [debug] [ThreadPool]: Using postgres connection "list_oltp_public_marts"
+[0m15:05:06.821513 [debug] [ThreadPool]: On list_oltp_public_intermediate: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp_public_intermediate"} */
+select
+      'oltp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_intermediate'
+    union all
+    select
+      'oltp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_intermediate'
+    union all
+    select
+      'oltp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_intermediate'
+  
+[0m15:05:06.822598 [debug] [ThreadPool]: Using postgres connection "list_oltp_public_staging"
+[0m15:05:06.822800 [debug] [ThreadPool]: On list_oltp_public_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp_public_marts"} */
+select
+      'oltp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_marts'
+    union all
+    select
+      'oltp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_marts'
+    union all
+    select
+      'oltp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_marts'
+  
+[0m15:05:06.823042 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:05:06.823226 [debug] [ThreadPool]: On list_oltp_public_staging: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp_public_staging"} */
+select
+      'oltp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'oltp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'oltp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_staging'
+  
+[0m15:05:06.823399 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:05:06.823658 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:05:06.840263 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.017 seconds
+[0m15:05:06.840513 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.017 seconds
+[0m15:05:06.840726 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.018 seconds
+[0m15:05:06.841321 [debug] [ThreadPool]: On list_oltp_public_marts: ROLLBACK
+[0m15:05:06.841834 [debug] [ThreadPool]: On list_oltp_public_staging: ROLLBACK
+[0m15:05:06.842322 [debug] [ThreadPool]: On list_oltp_public_intermediate: ROLLBACK
+[0m15:05:06.843236 [debug] [ThreadPool]: On list_oltp_public_staging: Close
+[0m15:05:06.843419 [debug] [ThreadPool]: On list_oltp_public_marts: Close
+[0m15:05:06.843563 [debug] [ThreadPool]: On list_oltp_public_intermediate: Close
+[0m15:05:06.846336 [debug] [MainThread]: Using postgres connection "master"
+[0m15:05:06.846596 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m15:05:06.846837 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:05:06.862164 [debug] [MainThread]: SQL status: SELECT 0 in 0.015 seconds
+[0m15:05:06.862817 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '32533387-36d6-49ee-8455-48bec2c94531', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111208cd0>]}
+[0m15:05:06.863070 [debug] [MainThread]: On master: ROLLBACK
+[0m15:05:06.863633 [debug] [MainThread]: On master: COMMIT
+[0m15:05:06.863807 [debug] [MainThread]: Using postgres connection "master"
+[0m15:05:06.863945 [debug] [MainThread]: On master: COMMIT
+[0m15:05:06.864726 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m15:05:06.864885 [debug] [MainThread]: On master: Close
+[0m15:05:06.867150 [debug] [Thread-1 (]: Began running node model.dataops_project.stg_customers
+[0m15:05:06.868237 [debug] [Thread-2 (]: Began running node model.dataops_project.stg_orders
+[0m15:05:06.868052 [info ] [Thread-1 (]: 1 of 4 START sql view model public_staging.stg_customers ....................... [RUN]
+[0m15:05:06.868570 [info ] [Thread-2 (]: 2 of 4 START sql view model public_staging.stg_orders .......................... [RUN]
+[0m15:05:06.868804 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_oltp_public_intermediate, now model.dataops_project.stg_customers)
+[0m15:05:06.868983 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_oltp_public_marts, now model.dataops_project.stg_orders)
+[0m15:05:06.869170 [debug] [Thread-1 (]: Began compiling node model.dataops_project.stg_customers
+[0m15:05:06.869373 [debug] [Thread-2 (]: Began compiling node model.dataops_project.stg_orders
+[0m15:05:06.872942 [debug] [Thread-1 (]: Writing injected SQL for node "model.dataops_project.stg_customers"
+[0m15:05:06.874015 [debug] [Thread-2 (]: Writing injected SQL for node "model.dataops_project.stg_orders"
+[0m15:05:06.874446 [debug] [Thread-2 (]: Began executing node model.dataops_project.stg_orders
+[0m15:05:06.874640 [debug] [Thread-1 (]: Began executing node model.dataops_project.stg_customers
+[0m15:05:06.893602 [debug] [Thread-2 (]: Writing runtime sql for node "model.dataops_project.stg_orders"
+[0m15:05:06.895691 [debug] [Thread-1 (]: Writing runtime sql for node "model.dataops_project.stg_customers"
+[0m15:05:06.896249 [debug] [Thread-2 (]: Using postgres connection "model.dataops_project.stg_orders"
+[0m15:05:06.896489 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_orders"} */
+
+  create view "oltp"."public_staging"."stg_orders__dbt_tmp"
+    
+    
+  as (
+    select
+    order_id,
+    customer_id,
+    store_id,
+    order_date,
+    status
+from public.orders
+  );
+[0m15:05:06.896732 [debug] [Thread-1 (]: Using postgres connection "model.dataops_project.stg_customers"
+[0m15:05:06.896940 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m15:05:06.897159 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_customers"} */
+
+  create view "oltp"."public_staging"."stg_customers__dbt_tmp"
+    
+    
+  as (
+    select
+    customer_id,
+    country,
+    signup_date,
+    segment
+from public.customers
+  );
+[0m15:05:06.897451 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:05:06.914145 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.017 seconds
+[0m15:05:06.914352 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.017 seconds
+[0m15:05:06.917734 [debug] [Thread-2 (]: Using postgres connection "model.dataops_project.stg_orders"
+[0m15:05:06.919316 [debug] [Thread-1 (]: Using postgres connection "model.dataops_project.stg_customers"
+[0m15:05:06.919541 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_orders"} */
+alter table "oltp"."public_staging"."stg_orders__dbt_tmp" rename to "stg_orders"
+[0m15:05:06.919749 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_customers"} */
+alter table "oltp"."public_staging"."stg_customers__dbt_tmp" rename to "stg_customers"
+[0m15:05:06.920703 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:05:06.920886 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:05:06.929434 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: COMMIT
+[0m15:05:06.930171 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: COMMIT
+[0m15:05:06.930383 [debug] [Thread-2 (]: Using postgres connection "model.dataops_project.stg_orders"
+[0m15:05:06.930576 [debug] [Thread-1 (]: Using postgres connection "model.dataops_project.stg_customers"
+[0m15:05:06.930757 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: COMMIT
+[0m15:05:06.930943 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: COMMIT
+[0m15:05:06.933151 [debug] [Thread-2 (]: SQL status: COMMIT in 0.002 seconds
+[0m15:05:06.933340 [debug] [Thread-1 (]: SQL status: COMMIT in 0.002 seconds
+[0m15:05:06.936485 [debug] [Thread-2 (]: Applying DROP to: "oltp"."public_staging"."stg_orders__dbt_backup"
+[0m15:05:06.938516 [debug] [Thread-1 (]: Applying DROP to: "oltp"."public_staging"."stg_customers__dbt_backup"
+[0m15:05:06.940973 [debug] [Thread-2 (]: Using postgres connection "model.dataops_project.stg_orders"
+[0m15:05:06.941383 [debug] [Thread-1 (]: Using postgres connection "model.dataops_project.stg_customers"
+[0m15:05:06.941595 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_orders"} */
+drop view if exists "oltp"."public_staging"."stg_orders__dbt_backup" cascade
+[0m15:05:06.941801 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_customers"} */
+drop view if exists "oltp"."public_staging"."stg_customers__dbt_backup" cascade
+[0m15:05:06.942910 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m15:05:06.943080 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m15:05:06.944128 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: Close
+[0m15:05:06.944703 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: Close
+[0m15:05:06.945940 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '32533387-36d6-49ee-8455-48bec2c94531', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110d12cd0>]}
+[0m15:05:06.946116 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '32533387-36d6-49ee-8455-48bec2c94531', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110104b10>]}
+[0m15:05:06.946446 [info ] [Thread-2 (]: 2 of 4 OK created sql view model public_staging.stg_orders ..................... [[32mCREATE VIEW[0m in 0.08s]
+[0m15:05:06.946804 [info ] [Thread-1 (]: 1 of 4 OK created sql view model public_staging.stg_customers .................. [[32mCREATE VIEW[0m in 0.08s]
+[0m15:05:06.947136 [debug] [Thread-2 (]: Finished running node model.dataops_project.stg_orders
+[0m15:05:06.947428 [debug] [Thread-1 (]: Finished running node model.dataops_project.stg_customers
+[0m15:05:06.947860 [debug] [Thread-4 (]: Began running node model.dataops_project.int_orders_customers
+[0m15:05:06.948159 [info ] [Thread-4 (]: 3 of 4 START sql view model public_intermediate.int_orders_customers ........... [RUN]
+[0m15:05:06.948425 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.dataops_project.int_orders_customers'
+[0m15:05:06.948611 [debug] [Thread-4 (]: Began compiling node model.dataops_project.int_orders_customers
+[0m15:05:06.950161 [debug] [Thread-4 (]: Writing injected SQL for node "model.dataops_project.int_orders_customers"
+[0m15:05:06.950562 [debug] [Thread-4 (]: Began executing node model.dataops_project.int_orders_customers
+[0m15:05:06.952464 [debug] [Thread-4 (]: Writing runtime sql for node "model.dataops_project.int_orders_customers"
+[0m15:05:06.952826 [debug] [Thread-4 (]: Using postgres connection "model.dataops_project.int_orders_customers"
+[0m15:05:06.953036 [debug] [Thread-4 (]: On model.dataops_project.int_orders_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.int_orders_customers"} */
+
+  create view "oltp"."public_intermediate"."int_orders_customers__dbt_tmp"
+    
+    
+  as (
+    select
+    o.order_id,
+    o.customer_id,
+    c.country,
+    c.segment,
+    o.store_id,
+    o.order_date,
+    o.status
+from "oltp"."public_staging"."stg_orders" o
+left join "oltp"."public_staging"."stg_customers" c
+    on o.customer_id = c.customer_id
+  );
+[0m15:05:06.953214 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m15:05:06.966430 [debug] [Thread-4 (]: SQL status: CREATE VIEW in 0.013 seconds
+[0m15:05:06.968255 [debug] [Thread-4 (]: Using postgres connection "model.dataops_project.int_orders_customers"
+[0m15:05:06.968475 [debug] [Thread-4 (]: On model.dataops_project.int_orders_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.int_orders_customers"} */
+alter table "oltp"."public_intermediate"."int_orders_customers__dbt_tmp" rename to "int_orders_customers"
+[0m15:05:06.969341 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:05:06.969998 [debug] [Thread-4 (]: On model.dataops_project.int_orders_customers: COMMIT
+[0m15:05:06.970190 [debug] [Thread-4 (]: Using postgres connection "model.dataops_project.int_orders_customers"
+[0m15:05:06.970364 [debug] [Thread-4 (]: On model.dataops_project.int_orders_customers: COMMIT
+[0m15:05:06.971550 [debug] [Thread-4 (]: SQL status: COMMIT in 0.001 seconds
+[0m15:05:06.972941 [debug] [Thread-4 (]: Applying DROP to: "oltp"."public_intermediate"."int_orders_customers__dbt_backup"
+[0m15:05:06.973349 [debug] [Thread-4 (]: Using postgres connection "model.dataops_project.int_orders_customers"
+[0m15:05:06.973546 [debug] [Thread-4 (]: On model.dataops_project.int_orders_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.int_orders_customers"} */
+drop view if exists "oltp"."public_intermediate"."int_orders_customers__dbt_backup" cascade
+[0m15:05:06.974455 [debug] [Thread-4 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m15:05:06.975017 [debug] [Thread-4 (]: On model.dataops_project.int_orders_customers: Close
+[0m15:05:06.975323 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '32533387-36d6-49ee-8455-48bec2c94531', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111210710>]}
+[0m15:05:06.975674 [info ] [Thread-4 (]: 3 of 4 OK created sql view model public_intermediate.int_orders_customers ...... [[32mCREATE VIEW[0m in 0.03s]
+[0m15:05:06.975978 [debug] [Thread-4 (]: Finished running node model.dataops_project.int_orders_customers
+[0m15:05:06.976401 [debug] [Thread-2 (]: Began running node model.dataops_project.mart_orders_by_country
+[0m15:05:06.976704 [info ] [Thread-2 (]: 4 of 4 START sql table model public_marts.mart_orders_by_country ............... [RUN]
+[0m15:05:06.976956 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dataops_project.stg_orders, now model.dataops_project.mart_orders_by_country)
+[0m15:05:06.977133 [debug] [Thread-2 (]: Began compiling node model.dataops_project.mart_orders_by_country
+[0m15:05:06.978733 [debug] [Thread-2 (]: Writing injected SQL for node "model.dataops_project.mart_orders_by_country"
+[0m15:05:06.979284 [debug] [Thread-2 (]: Began executing node model.dataops_project.mart_orders_by_country
+[0m15:05:06.991074 [debug] [Thread-2 (]: Writing runtime sql for node "model.dataops_project.mart_orders_by_country"
+[0m15:05:06.991607 [debug] [Thread-2 (]: Using postgres connection "model.dataops_project.mart_orders_by_country"
+[0m15:05:06.991824 [debug] [Thread-2 (]: On model.dataops_project.mart_orders_by_country: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.mart_orders_by_country"} */
+
+  
+    
+
+  create  table "oltp"."public_marts"."mart_orders_by_country__dbt_tmp"
+  
+  
+    as
+  
+  (
+    select
+    country,
+    segment,
+    count(order_id) as total_orders
+from "oltp"."public_intermediate"."int_orders_customers"
+group by country, segment
+  );
+  
+[0m15:05:06.992023 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m15:05:07.009349 [debug] [Thread-2 (]: SQL status: SELECT 15 in 0.017 seconds
+[0m15:05:07.013194 [debug] [Thread-2 (]: Using postgres connection "model.dataops_project.mart_orders_by_country"
+[0m15:05:07.013436 [debug] [Thread-2 (]: On model.dataops_project.mart_orders_by_country: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.mart_orders_by_country"} */
+alter table "oltp"."public_marts"."mart_orders_by_country__dbt_tmp" rename to "mart_orders_by_country"
+[0m15:05:07.014673 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:05:07.015358 [debug] [Thread-2 (]: On model.dataops_project.mart_orders_by_country: COMMIT
+[0m15:05:07.015540 [debug] [Thread-2 (]: Using postgres connection "model.dataops_project.mart_orders_by_country"
+[0m15:05:07.015708 [debug] [Thread-2 (]: On model.dataops_project.mart_orders_by_country: COMMIT
+[0m15:05:07.016845 [debug] [Thread-2 (]: SQL status: COMMIT in 0.001 seconds
+[0m15:05:07.018048 [debug] [Thread-2 (]: Applying DROP to: "oltp"."public_marts"."mart_orders_by_country__dbt_backup"
+[0m15:05:07.019543 [debug] [Thread-2 (]: Using postgres connection "model.dataops_project.mart_orders_by_country"
+[0m15:05:07.019744 [debug] [Thread-2 (]: On model.dataops_project.mart_orders_by_country: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.mart_orders_by_country"} */
+drop table if exists "oltp"."public_marts"."mart_orders_by_country__dbt_backup" cascade
+[0m15:05:07.020739 [debug] [Thread-2 (]: SQL status: DROP TABLE in 0.001 seconds
+[0m15:05:07.021297 [debug] [Thread-2 (]: On model.dataops_project.mart_orders_by_country: Close
+[0m15:05:07.021594 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '32533387-36d6-49ee-8455-48bec2c94531', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1116f2d50>]}
+[0m15:05:07.021919 [info ] [Thread-2 (]: 4 of 4 OK created sql table model public_marts.mart_orders_by_country .......... [[32mSELECT 15[0m in 0.04s]
+[0m15:05:07.022248 [debug] [Thread-2 (]: Finished running node model.dataops_project.mart_orders_by_country
+[0m15:05:07.022986 [debug] [MainThread]: On master: COMMIT
+[0m15:05:07.023173 [debug] [MainThread]: Using postgres connection "master"
+[0m15:05:07.023322 [debug] [MainThread]: On master: COMMIT
+[0m15:05:07.023457 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:05:07.035700 [debug] [MainThread]: SQL status: COMMIT in 0.012 seconds
+[0m15:05:07.036033 [debug] [MainThread]: On master: Close
+[0m15:05:07.036283 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:05:07.036426 [debug] [MainThread]: Connection 'model.dataops_project.stg_customers' was properly closed.
+[0m15:05:07.036556 [debug] [MainThread]: Connection 'model.dataops_project.mart_orders_by_country' was properly closed.
+[0m15:05:07.036680 [debug] [MainThread]: Connection 'list_oltp_public_staging' was properly closed.
+[0m15:05:07.036800 [debug] [MainThread]: Connection 'model.dataops_project.int_orders_customers' was properly closed.
+[0m15:05:07.037010 [info ] [MainThread]: 
+[0m15:05:07.037198 [info ] [MainThread]: Finished running 1 table model, 3 view models in 0 hours 0 minutes and 0.73 seconds (0.73s).
+[0m15:05:07.037741 [debug] [MainThread]: Command end result
+[0m15:05:07.056568 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m15:05:07.057696 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m15:05:07.060864 [debug] [MainThread]: Wrote artifact RunExecutionResult to ./target/run_results.json
+[0m15:05:07.061043 [info ] [MainThread]: 
+[0m15:05:07.061251 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:05:07.061414 [info ] [MainThread]: 
+[0m15:05:07.061599 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m15:05:07.145895 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.8321786, "process_in_blocks": "0", "process_kernel_time": 0.229459, "process_mem_max_rss": "143220736", "process_out_blocks": "0", "process_user_time": 1.435954}
+[0m15:05:07.146271 [debug] [MainThread]: Command `dbt run` succeeded at 15:05:07.146207 after 3.83 seconds
+[0m15:05:07.146521 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f654910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f740250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109ef0e90>]}
+[0m15:05:07.146738 [debug] [MainThread]: Flushing usage events
+[0m15:05:08.452029 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:22:17.124630 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f8c57d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f96f2d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f96f990>]}
+
+
+============================== 15:22:17.128440 | 00f65cd5-4545-4184-b176-a21403f3ef65 ==============================
+[0m15:22:17.128440 [info ] [MainThread]: Running with dbt=1.11.11
+[0m15:22:17.128837 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'introspect': 'True', 'use_colors': 'True', 'log_format': 'default', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/Users/mihasoarajoelisolo/.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'static_parser': 'True', 'log_path': '/Users/mihasoarajoelisolo/Downloads/Dataops/logs', 'debug': 'False', 'no_print': 'None', 'target_path': 'None', 'indirect_selection': 'eager', 'warn_error': 'None', 'invocation_command': 'dbt debug', 'cache_selected_only': 'False', 'empty': 'None', 'version_check': 'True', 'fail_fast': 'False', 'printer_width': '80', 'use_experimental_parser': 'False', 'log_cache_events': 'False'}
+[0m15:22:17.140280 [info ] [MainThread]: dbt version: 1.11.11
+[0m15:22:17.140659 [info ] [MainThread]: python version: 3.11.7
+[0m15:22:17.140866 [info ] [MainThread]: python path: /Users/mihasoarajoelisolo/Downloads/Dataops/dbt-env/bin/python
+[0m15:22:17.141040 [info ] [MainThread]: os info: macOS-10.16-x86_64-i386-64bit
+[0m15:22:19.220978 [info ] [MainThread]: Using profiles dir at /Users/mihasoarajoelisolo/.dbt
+[0m15:22:19.221353 [info ] [MainThread]: Using profiles.yml file at /Users/mihasoarajoelisolo/.dbt/profiles.yml
+[0m15:22:19.221533 [info ] [MainThread]: Using dbt_project.yml file at /Users/mihasoarajoelisolo/Downloads/Dataops/dbt_project.yml
+[0m15:22:19.222003 [info ] [MainThread]: adapter type: postgres
+[0m15:22:19.222202 [info ] [MainThread]: adapter version: 1.10.0
+[0m15:22:19.290361 [info ] [MainThread]: Configuration:
+[0m15:22:19.290681 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m15:22:19.290848 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m15:22:19.290994 [info ] [MainThread]: Required dependencies:
+[0m15:22:19.291205 [debug] [MainThread]: Executing "git --help"
+[0m15:22:19.767332 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m15:22:19.768009 [debug] [MainThread]: STDERR: "b''"
+[0m15:22:19.768244 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m15:22:19.768448 [info ] [MainThread]: Connection:
+[0m15:22:19.768661 [info ] [MainThread]:   host: localhost
+[0m15:22:19.768812 [info ] [MainThread]:   port: 5433
+[0m15:22:19.768953 [info ] [MainThread]:   user: dataops
+[0m15:22:19.769091 [info ] [MainThread]:   database: oltp
+[0m15:22:19.769225 [info ] [MainThread]:   schema: public
+[0m15:22:19.769358 [info ] [MainThread]:   connect_timeout: 10
+[0m15:22:19.769514 [info ] [MainThread]:   role: None
+[0m15:22:19.769657 [info ] [MainThread]:   search_path: None
+[0m15:22:19.769793 [info ] [MainThread]:   keepalives_idle: 0
+[0m15:22:19.769928 [info ] [MainThread]:   sslmode: None
+[0m15:22:19.770066 [info ] [MainThread]:   sslcert: None
+[0m15:22:19.770194 [info ] [MainThread]:   sslkey: None
+[0m15:22:19.770330 [info ] [MainThread]:   sslrootcert: None
+[0m15:22:19.770464 [info ] [MainThread]:   application_name: dbt
+[0m15:22:19.770607 [info ] [MainThread]:   retries: 1
+[0m15:22:19.770983 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:22:19.907766 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m15:22:19.930885 [debug] [MainThread]: Using postgres connection "debug"
+[0m15:22:19.931130 [debug] [MainThread]: On debug: select 1 as id
+[0m15:22:19.931302 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:22:20.393601 [debug] [MainThread]: SQL status: SELECT 1 in 0.462 seconds
+[0m15:22:20.394249 [debug] [MainThread]: On debug: Close
+[0m15:22:20.394447 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m15:22:20.394638 [info ] [MainThread]: [32mAll checks passed![0m
+[0m15:22:20.476360 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 3.6056821, "process_in_blocks": "0", "process_kernel_time": 0.191896, "process_mem_max_rss": "127225856", "process_out_blocks": "0", "process_user_time": 0.940731}
+[0m15:22:20.476784 [debug] [MainThread]: Command `dbt debug` succeeded at 15:22:20.476710 after 3.61 seconds
+[0m15:22:20.476997 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m15:22:20.477220 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a248650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f987fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11103a710>]}
+[0m15:22:20.477476 [debug] [MainThread]: Flushing usage events
+[0m15:22:20.939977 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:22:27.682989 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1133c21d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1134a2b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1134c3d90>]}
+
+
+============================== 15:22:27.686669 | c9457781-713a-491d-8d4b-8157ec629d02 ==============================
+[0m15:22:27.686669 [info ] [MainThread]: Running with dbt=1.11.11
+[0m15:22:27.687050 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'partial_parse': 'True', 'empty': 'False', 'invocation_command': 'dbt run', 'introspect': 'True', 'write_json': 'True', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': '/Users/mihasoarajoelisolo/Downloads/Dataops/logs', 'log_format': 'default', 'quiet': 'False', 'target_path': 'None', 'profiles_dir': '/Users/mihasoarajoelisolo/.dbt', 'printer_width': '80', 'use_colors': 'True', 'indirect_selection': 'eager', 'static_parser': 'True', 'version_check': 'True', 'warn_error': 'None', 'debug': 'False'}
+[0m15:22:27.815348 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c9457781-713a-491d-8d4b-8157ec629d02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1134a0750>]}
+[0m15:22:27.853956 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c9457781-713a-491d-8d4b-8157ec629d02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fd6b690>]}
+[0m15:22:27.854624 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:22:27.918332 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m15:22:27.974474 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:22:27.974722 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m15:22:27.974876 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:22:27.988963 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c9457781-713a-491d-8d4b-8157ec629d02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11348f3d0>]}
+[0m15:22:28.056715 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/mihasoarajoelisolo/Downloads/Dataops/target/manifest.json
+[0m15:22:28.058086 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/mihasoarajoelisolo/Downloads/Dataops/target/semantic_manifest.json
+[0m15:22:28.064222 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c9457781-713a-491d-8d4b-8157ec629d02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114cd9110>]}
+[0m15:22:28.064551 [info ] [MainThread]: Found 4 models, 475 macros
+[0m15:22:28.064755 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c9457781-713a-491d-8d4b-8157ec629d02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114cb8550>]}
+[0m15:22:28.065883 [info ] [MainThread]: 
+[0m15:22:28.066076 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:22:28.066232 [info ] [MainThread]: 
+[0m15:22:28.066517 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:22:28.068875 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oltp'
+[0m15:22:28.069236 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oltp'
+[0m15:22:28.069562 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oltp'
+[0m15:22:28.110154 [debug] [ThreadPool]: Using postgres connection "list_oltp"
+[0m15:22:28.110393 [debug] [ThreadPool]: Using postgres connection "list_oltp"
+[0m15:22:28.110607 [debug] [ThreadPool]: Using postgres connection "list_oltp"
+[0m15:22:28.110763 [debug] [ThreadPool]: On list_oltp: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:22:28.110930 [debug] [ThreadPool]: On list_oltp: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:22:28.111105 [debug] [ThreadPool]: On list_oltp: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:22:28.111257 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:22:28.111393 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:22:28.111521 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:22:28.145581 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.034 seconds
+[0m15:22:28.146003 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.035 seconds
+[0m15:22:28.146245 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.035 seconds
+[0m15:22:28.147186 [debug] [ThreadPool]: On list_oltp: Close
+[0m15:22:28.147779 [debug] [ThreadPool]: On list_oltp: Close
+[0m15:22:28.148314 [debug] [ThreadPool]: On list_oltp: Close
+[0m15:22:28.149589 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_oltp, now list_oltp_public_intermediate)
+[0m15:22:28.149885 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_oltp, now list_oltp_public_staging)
+[0m15:22:28.153364 [debug] [ThreadPool]: Using postgres connection "list_oltp_public_intermediate"
+[0m15:22:28.153675 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_oltp, now list_oltp_public_marts)
+[0m15:22:28.154876 [debug] [ThreadPool]: Using postgres connection "list_oltp_public_staging"
+[0m15:22:28.155088 [debug] [ThreadPool]: On list_oltp_public_intermediate: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp_public_intermediate"} */
+select
+      'oltp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_intermediate'
+    union all
+    select
+      'oltp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_intermediate'
+    union all
+    select
+      'oltp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_intermediate'
+  
+[0m15:22:28.156194 [debug] [ThreadPool]: Using postgres connection "list_oltp_public_marts"
+[0m15:22:28.156386 [debug] [ThreadPool]: On list_oltp_public_staging: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp_public_staging"} */
+select
+      'oltp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'oltp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'oltp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_staging'
+  
+[0m15:22:28.156573 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:22:28.156744 [debug] [ThreadPool]: On list_oltp_public_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp_public_marts"} */
+select
+      'oltp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_marts'
+    union all
+    select
+      'oltp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_marts'
+    union all
+    select
+      'oltp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_marts'
+  
+[0m15:22:28.156911 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:22:28.157163 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:22:28.172574 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.015 seconds
+[0m15:22:28.172753 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.016 seconds
+[0m15:22:28.172925 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.016 seconds
+[0m15:22:28.173521 [debug] [ThreadPool]: On list_oltp_public_marts: ROLLBACK
+[0m15:22:28.174001 [debug] [ThreadPool]: On list_oltp_public_staging: ROLLBACK
+[0m15:22:28.174495 [debug] [ThreadPool]: On list_oltp_public_intermediate: ROLLBACK
+[0m15:22:28.175075 [debug] [ThreadPool]: On list_oltp_public_marts: Close
+[0m15:22:28.175237 [debug] [ThreadPool]: On list_oltp_public_intermediate: Close
+[0m15:22:28.175408 [debug] [ThreadPool]: On list_oltp_public_staging: Close
+[0m15:22:28.178325 [debug] [MainThread]: Using postgres connection "master"
+[0m15:22:28.178550 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m15:22:28.178782 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:22:28.194001 [debug] [MainThread]: SQL status: SELECT 4 in 0.015 seconds
+[0m15:22:28.194767 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c9457781-713a-491d-8d4b-8157ec629d02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11259cf10>]}
+[0m15:22:28.195013 [debug] [MainThread]: On master: ROLLBACK
+[0m15:22:28.195584 [debug] [MainThread]: On master: COMMIT
+[0m15:22:28.195739 [debug] [MainThread]: Using postgres connection "master"
+[0m15:22:28.195876 [debug] [MainThread]: On master: COMMIT
+[0m15:22:28.196676 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m15:22:28.196822 [debug] [MainThread]: On master: Close
+[0m15:22:28.199328 [debug] [Thread-1 (]: Began running node model.dataops_project.stg_customers
+[0m15:22:28.199548 [debug] [Thread-2 (]: Began running node model.dataops_project.stg_orders
+[0m15:22:28.199802 [info ] [Thread-1 (]: 1 of 4 START sql view model public_staging.stg_customers ....................... [RUN]
+[0m15:22:28.200127 [info ] [Thread-2 (]: 2 of 4 START sql view model public_staging.stg_orders .......................... [RUN]
+[0m15:22:28.200405 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_oltp_public_intermediate, now model.dataops_project.stg_customers)
+[0m15:22:28.200629 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_oltp_public_staging, now model.dataops_project.stg_orders)
+[0m15:22:28.200830 [debug] [Thread-1 (]: Began compiling node model.dataops_project.stg_customers
+[0m15:22:28.201026 [debug] [Thread-2 (]: Began compiling node model.dataops_project.stg_orders
+[0m15:22:28.204453 [debug] [Thread-1 (]: Writing injected SQL for node "model.dataops_project.stg_customers"
+[0m15:22:28.205480 [debug] [Thread-2 (]: Writing injected SQL for node "model.dataops_project.stg_orders"
+[0m15:22:28.205862 [debug] [Thread-1 (]: Began executing node model.dataops_project.stg_customers
+[0m15:22:28.206063 [debug] [Thread-2 (]: Began executing node model.dataops_project.stg_orders
+[0m15:22:28.225398 [debug] [Thread-1 (]: Writing runtime sql for node "model.dataops_project.stg_customers"
+[0m15:22:28.227343 [debug] [Thread-2 (]: Writing runtime sql for node "model.dataops_project.stg_orders"
+[0m15:22:28.227773 [debug] [Thread-1 (]: Using postgres connection "model.dataops_project.stg_customers"
+[0m15:22:28.227998 [debug] [Thread-2 (]: Using postgres connection "model.dataops_project.stg_orders"
+[0m15:22:28.228197 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_customers"} */
+
+  create view "oltp"."public_staging"."stg_customers__dbt_tmp"
+    
+    
+  as (
+    select
+    customer_id,
+    country,
+    signup_date,
+    segment
+from public.customers
+  );
+[0m15:22:28.228399 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_orders"} */
+
+  create view "oltp"."public_staging"."stg_orders__dbt_tmp"
+    
+    
+  as (
+    select
+    order_id,
+    customer_id,
+    store_id,
+    order_date,
+    status
+from public.orders
+  );
+[0m15:22:28.228591 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:22:28.228777 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m15:22:28.245301 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.016 seconds
+[0m15:22:28.245507 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.017 seconds
+[0m15:22:28.248698 [debug] [Thread-2 (]: Using postgres connection "model.dataops_project.stg_orders"
+[0m15:22:28.250252 [debug] [Thread-1 (]: Using postgres connection "model.dataops_project.stg_customers"
+[0m15:22:28.250464 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_orders"} */
+alter table "oltp"."public_staging"."stg_orders" rename to "stg_orders__dbt_backup"
+[0m15:22:28.250665 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_customers"} */
+alter table "oltp"."public_staging"."stg_customers" rename to "stg_customers__dbt_backup"
+[0m15:22:28.251910 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:22:28.252081 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:22:28.253475 [debug] [Thread-1 (]: Using postgres connection "model.dataops_project.stg_customers"
+[0m15:22:28.254975 [debug] [Thread-2 (]: Using postgres connection "model.dataops_project.stg_orders"
+[0m15:22:28.255179 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_customers"} */
+alter table "oltp"."public_staging"."stg_customers__dbt_tmp" rename to "stg_customers"
+[0m15:22:28.255362 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_orders"} */
+alter table "oltp"."public_staging"."stg_orders__dbt_tmp" rename to "stg_orders"
+[0m15:22:28.256265 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:22:28.256435 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:22:28.265643 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: COMMIT
+[0m15:22:28.266373 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: COMMIT
+[0m15:22:28.266574 [debug] [Thread-2 (]: Using postgres connection "model.dataops_project.stg_orders"
+[0m15:22:28.266757 [debug] [Thread-1 (]: Using postgres connection "model.dataops_project.stg_customers"
+[0m15:22:28.266939 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: COMMIT
+[0m15:22:28.267136 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: COMMIT
+[0m15:22:28.269123 [debug] [Thread-1 (]: SQL status: COMMIT in 0.002 seconds
+[0m15:22:28.269290 [debug] [Thread-2 (]: SQL status: COMMIT in 0.002 seconds
+[0m15:22:28.272274 [debug] [Thread-1 (]: Applying DROP to: "oltp"."public_staging"."stg_customers__dbt_backup"
+[0m15:22:28.273505 [debug] [Thread-2 (]: Applying DROP to: "oltp"."public_staging"."stg_orders__dbt_backup"
+[0m15:22:28.276512 [debug] [Thread-1 (]: Using postgres connection "model.dataops_project.stg_customers"
+[0m15:22:28.276876 [debug] [Thread-2 (]: Using postgres connection "model.dataops_project.stg_orders"
+[0m15:22:28.277069 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_customers"} */
+drop view if exists "oltp"."public_staging"."stg_customers__dbt_backup" cascade
+[0m15:22:28.277254 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.stg_orders"} */
+drop view if exists "oltp"."public_staging"."stg_orders__dbt_backup" cascade
+[0m15:22:28.281878 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.004 seconds
+[0m15:22:28.282966 [debug] [Thread-1 (]: On model.dataops_project.stg_customers: Close
+[0m15:22:28.283162 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.006 seconds
+[0m15:22:28.283730 [debug] [Thread-2 (]: On model.dataops_project.stg_orders: Close
+[0m15:22:28.284724 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c9457781-713a-491d-8d4b-8157ec629d02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1134a2090>]}
+[0m15:22:28.284897 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c9457781-713a-491d-8d4b-8157ec629d02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1152dbe10>]}
+[0m15:22:28.285209 [info ] [Thread-1 (]: 1 of 4 OK created sql view model public_staging.stg_customers .................. [[32mCREATE VIEW[0m in 0.08s]
+[0m15:22:28.285509 [info ] [Thread-2 (]: 2 of 4 OK created sql view model public_staging.stg_orders ..................... [[32mCREATE VIEW[0m in 0.08s]
+[0m15:22:28.285797 [debug] [Thread-1 (]: Finished running node model.dataops_project.stg_customers
+[0m15:22:28.286039 [debug] [Thread-2 (]: Finished running node model.dataops_project.stg_orders
+[0m15:22:28.286461 [debug] [Thread-4 (]: Began running node model.dataops_project.int_orders_customers
+[0m15:22:28.286789 [info ] [Thread-4 (]: 3 of 4 START sql view model public_intermediate.int_orders_customers ........... [RUN]
+[0m15:22:28.287090 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.dataops_project.int_orders_customers'
+[0m15:22:28.287284 [debug] [Thread-4 (]: Began compiling node model.dataops_project.int_orders_customers
+[0m15:22:28.289681 [debug] [Thread-4 (]: Writing injected SQL for node "model.dataops_project.int_orders_customers"
+[0m15:22:28.290019 [debug] [Thread-4 (]: Began executing node model.dataops_project.int_orders_customers
+[0m15:22:28.291897 [debug] [Thread-4 (]: Writing runtime sql for node "model.dataops_project.int_orders_customers"
+[0m15:22:28.292233 [debug] [Thread-4 (]: Using postgres connection "model.dataops_project.int_orders_customers"
+[0m15:22:28.292438 [debug] [Thread-4 (]: On model.dataops_project.int_orders_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.int_orders_customers"} */
+
+  create view "oltp"."public_intermediate"."int_orders_customers__dbt_tmp"
+    
+    
+  as (
+    select
+    o.order_id,
+    o.customer_id,
+    c.country,
+    c.segment,
+    o.store_id,
+    o.order_date,
+    o.status
+from "oltp"."public_staging"."stg_orders" o
+left join "oltp"."public_staging"."stg_customers" c
+    on o.customer_id = c.customer_id
+  );
+[0m15:22:28.292632 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m15:22:28.306046 [debug] [Thread-4 (]: SQL status: CREATE VIEW in 0.013 seconds
+[0m15:22:28.307755 [debug] [Thread-4 (]: Using postgres connection "model.dataops_project.int_orders_customers"
+[0m15:22:28.307943 [debug] [Thread-4 (]: On model.dataops_project.int_orders_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.int_orders_customers"} */
+alter table "oltp"."public_intermediate"."int_orders_customers__dbt_tmp" rename to "int_orders_customers"
+[0m15:22:28.308697 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:22:28.309299 [debug] [Thread-4 (]: On model.dataops_project.int_orders_customers: COMMIT
+[0m15:22:28.309472 [debug] [Thread-4 (]: Using postgres connection "model.dataops_project.int_orders_customers"
+[0m15:22:28.309637 [debug] [Thread-4 (]: On model.dataops_project.int_orders_customers: COMMIT
+[0m15:22:28.310766 [debug] [Thread-4 (]: SQL status: COMMIT in 0.001 seconds
+[0m15:22:28.311908 [debug] [Thread-4 (]: Applying DROP to: "oltp"."public_intermediate"."int_orders_customers__dbt_backup"
+[0m15:22:28.312272 [debug] [Thread-4 (]: Using postgres connection "model.dataops_project.int_orders_customers"
+[0m15:22:28.312447 [debug] [Thread-4 (]: On model.dataops_project.int_orders_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.int_orders_customers"} */
+drop view if exists "oltp"."public_intermediate"."int_orders_customers__dbt_backup" cascade
+[0m15:22:28.313146 [debug] [Thread-4 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m15:22:28.313667 [debug] [Thread-4 (]: On model.dataops_project.int_orders_customers: Close
+[0m15:22:28.313946 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c9457781-713a-491d-8d4b-8157ec629d02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113433e50>]}
+[0m15:22:28.314250 [info ] [Thread-4 (]: 3 of 4 OK created sql view model public_intermediate.int_orders_customers ...... [[32mCREATE VIEW[0m in 0.03s]
+[0m15:22:28.314525 [debug] [Thread-4 (]: Finished running node model.dataops_project.int_orders_customers
+[0m15:22:28.314939 [debug] [Thread-1 (]: Began running node model.dataops_project.mart_orders_by_country
+[0m15:22:28.315221 [info ] [Thread-1 (]: 4 of 4 START sql table model public_marts.mart_orders_by_country ............... [RUN]
+[0m15:22:28.315446 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dataops_project.stg_customers, now model.dataops_project.mart_orders_by_country)
+[0m15:22:28.315612 [debug] [Thread-1 (]: Began compiling node model.dataops_project.mart_orders_by_country
+[0m15:22:28.317024 [debug] [Thread-1 (]: Writing injected SQL for node "model.dataops_project.mart_orders_by_country"
+[0m15:22:28.317346 [debug] [Thread-1 (]: Began executing node model.dataops_project.mart_orders_by_country
+[0m15:22:28.328968 [debug] [Thread-1 (]: Writing runtime sql for node "model.dataops_project.mart_orders_by_country"
+[0m15:22:28.329406 [debug] [Thread-1 (]: Using postgres connection "model.dataops_project.mart_orders_by_country"
+[0m15:22:28.329610 [debug] [Thread-1 (]: On model.dataops_project.mart_orders_by_country: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.mart_orders_by_country"} */
+
+  
+    
+
+  create  table "oltp"."public_marts"."mart_orders_by_country__dbt_tmp"
+  
+  
+    as
+  
+  (
+    select
+    country,
+    segment,
+    count(order_id) as total_orders
+from "oltp"."public_intermediate"."int_orders_customers"
+group by country, segment
+  );
+  
+[0m15:22:28.329810 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:22:28.350654 [debug] [Thread-1 (]: SQL status: SELECT 15 in 0.021 seconds
+[0m15:22:28.354106 [debug] [Thread-1 (]: Using postgres connection "model.dataops_project.mart_orders_by_country"
+[0m15:22:28.354311 [debug] [Thread-1 (]: On model.dataops_project.mart_orders_by_country: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.mart_orders_by_country"} */
+alter table "oltp"."public_marts"."mart_orders_by_country" rename to "mart_orders_by_country__dbt_backup"
+[0m15:22:28.355678 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:22:28.357145 [debug] [Thread-1 (]: Using postgres connection "model.dataops_project.mart_orders_by_country"
+[0m15:22:28.357347 [debug] [Thread-1 (]: On model.dataops_project.mart_orders_by_country: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.mart_orders_by_country"} */
+alter table "oltp"."public_marts"."mart_orders_by_country__dbt_tmp" rename to "mart_orders_by_country"
+[0m15:22:28.358447 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:22:28.359137 [debug] [Thread-1 (]: On model.dataops_project.mart_orders_by_country: COMMIT
+[0m15:22:28.359315 [debug] [Thread-1 (]: Using postgres connection "model.dataops_project.mart_orders_by_country"
+[0m15:22:28.359481 [debug] [Thread-1 (]: On model.dataops_project.mart_orders_by_country: COMMIT
+[0m15:22:28.360736 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m15:22:28.361996 [debug] [Thread-1 (]: Applying DROP to: "oltp"."public_marts"."mart_orders_by_country__dbt_backup"
+[0m15:22:28.363326 [debug] [Thread-1 (]: Using postgres connection "model.dataops_project.mart_orders_by_country"
+[0m15:22:28.363512 [debug] [Thread-1 (]: On model.dataops_project.mart_orders_by_country: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "model.dataops_project.mart_orders_by_country"} */
+drop table if exists "oltp"."public_marts"."mart_orders_by_country__dbt_backup" cascade
+[0m15:22:28.367539 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.004 seconds
+[0m15:22:28.368106 [debug] [Thread-1 (]: On model.dataops_project.mart_orders_by_country: Close
+[0m15:22:28.368392 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c9457781-713a-491d-8d4b-8157ec629d02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114dce310>]}
+[0m15:22:28.368707 [info ] [Thread-1 (]: 4 of 4 OK created sql table model public_marts.mart_orders_by_country .......... [[32mSELECT 15[0m in 0.05s]
+[0m15:22:28.368988 [debug] [Thread-1 (]: Finished running node model.dataops_project.mart_orders_by_country
+[0m15:22:28.369667 [debug] [MainThread]: On master: COMMIT
+[0m15:22:28.369851 [debug] [MainThread]: Using postgres connection "master"
+[0m15:22:28.369997 [debug] [MainThread]: On master: COMMIT
+[0m15:22:28.370135 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:22:28.381844 [debug] [MainThread]: SQL status: COMMIT in 0.012 seconds
+[0m15:22:28.382040 [debug] [MainThread]: On master: Close
+[0m15:22:28.382240 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:22:28.382377 [debug] [MainThread]: Connection 'model.dataops_project.mart_orders_by_country' was properly closed.
+[0m15:22:28.382504 [debug] [MainThread]: Connection 'model.dataops_project.stg_orders' was properly closed.
+[0m15:22:28.382630 [debug] [MainThread]: Connection 'list_oltp_public_marts' was properly closed.
+[0m15:22:28.382752 [debug] [MainThread]: Connection 'model.dataops_project.int_orders_customers' was properly closed.
+[0m15:22:28.382946 [info ] [MainThread]: 
+[0m15:22:28.383110 [info ] [MainThread]: Finished running 1 table model, 3 view models in 0 hours 0 minutes and 0.32 seconds (0.32s).
+[0m15:22:28.383623 [debug] [MainThread]: Command end result
+[0m15:22:28.411568 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/mihasoarajoelisolo/Downloads/Dataops/target/manifest.json
+[0m15:22:28.412633 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/mihasoarajoelisolo/Downloads/Dataops/target/semantic_manifest.json
+[0m15:22:28.415775 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/mihasoarajoelisolo/Downloads/Dataops/target/run_results.json
+[0m15:22:28.415953 [info ] [MainThread]: 
+[0m15:22:28.416167 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:22:28.416325 [info ] [MainThread]: 
+[0m15:22:28.416506 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m15:22:28.418618 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.803403, "process_in_blocks": "0", "process_kernel_time": 0.197557, "process_mem_max_rss": "139235328", "process_out_blocks": "0", "process_user_time": 1.2874}
+[0m15:22:28.418874 [debug] [MainThread]: Command `dbt run` succeeded at 15:22:28.418826 after 0.80 seconds
+[0m15:22:28.419094 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1132ffb50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1133061d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11331e4d0>]}
+[0m15:22:28.419277 [debug] [MainThread]: Flushing usage events
+[0m15:22:28.832312 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:43:44.629908 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111989290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111a8d850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111a8f890>]}
+
+
+============================== 15:43:44.635249 | 836bc9d4-50b2-4700-80be-f5619b779585 ==============================
+[0m15:43:44.635249 [info ] [MainThread]: Running with dbt=1.11.11
+[0m15:43:44.635688 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'write_json': 'True', 'static_parser': 'True', 'quiet': 'False', 'cache_selected_only': 'False', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/Users/mihasoarajoelisolo/.dbt', 'warn_error': 'None', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'log_format': 'default', 'invocation_command': 'dbt test --project-dir . --profiles-dir /Users/mihasoarajoelisolo/.dbt', 'target_path': 'None', 'use_experimental_parser': 'False', 'log_path': 'logs', 'printer_width': '80', 'fail_fast': 'False', 'use_colors': 'True', 'empty': 'None', 'debug': 'False', 'introspect': 'True', 'log_cache_events': 'False'}
+[0m15:43:46.873862 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '836bc9d4-50b2-4700-80be-f5619b779585', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112fee7d0>]}
+[0m15:43:46.911625 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '836bc9d4-50b2-4700-80be-f5619b779585', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e333550>]}
+[0m15:43:46.912262 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:43:47.056038 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m15:43:47.113672 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m15:43:47.114055 [debug] [MainThread]: Partial parsing: added file: dataops_project://dbt_project/models/schema.yml
+[0m15:43:47.257037 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on 'stg_orders' in
+package 'dataops_project' (dbt_project/models/schema.yml). Arguments to generic
+tests should be nested under the `arguments` property.
+[0m15:43:47.257414 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '836bc9d4-50b2-4700-80be-f5619b779585', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1135e49d0>]}
+[0m15:43:47.312819 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '836bc9d4-50b2-4700-80be-f5619b779585', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11323dd10>]}
+[0m15:43:47.360260 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m15:43:47.361951 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m15:43:47.374011 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '836bc9d4-50b2-4700-80be-f5619b779585', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113701950>]}
+[0m15:43:47.374351 [info ] [MainThread]: Found 4 models, 11 data tests, 475 macros
+[0m15:43:47.374548 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '836bc9d4-50b2-4700-80be-f5619b779585', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1135ed810>]}
+[0m15:43:47.375801 [info ] [MainThread]: 
+[0m15:43:47.375996 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:43:47.376146 [info ] [MainThread]: 
+[0m15:43:47.376395 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:43:47.378580 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oltp_public_staging'
+[0m15:43:47.378868 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oltp_public_marts'
+[0m15:43:47.384991 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oltp_public_intermediate'
+[0m15:43:47.409382 [debug] [ThreadPool]: Using postgres connection "list_oltp_public_staging"
+[0m15:43:47.409600 [debug] [ThreadPool]: Using postgres connection "list_oltp_public_marts"
+[0m15:43:47.409809 [debug] [ThreadPool]: Using postgres connection "list_oltp_public_intermediate"
+[0m15:43:47.409976 [debug] [ThreadPool]: On list_oltp_public_staging: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp_public_staging"} */
+select
+      'oltp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'oltp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'oltp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_staging'
+  
+[0m15:43:47.410165 [debug] [ThreadPool]: On list_oltp_public_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp_public_marts"} */
+select
+      'oltp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_marts'
+    union all
+    select
+      'oltp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_marts'
+    union all
+    select
+      'oltp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_marts'
+  
+[0m15:43:47.410344 [debug] [ThreadPool]: On list_oltp_public_intermediate: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "list_oltp_public_intermediate"} */
+select
+      'oltp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_intermediate'
+    union all
+    select
+      'oltp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_intermediate'
+    union all
+    select
+      'oltp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_intermediate'
+  
+[0m15:43:47.410507 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:43:47.410644 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:43:47.410789 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:43:47.878064 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.467 seconds
+[0m15:43:47.878379 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.468 seconds
+[0m15:43:47.878558 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.468 seconds
+[0m15:43:47.879359 [debug] [ThreadPool]: On list_oltp_public_staging: ROLLBACK
+[0m15:43:47.879893 [debug] [ThreadPool]: On list_oltp_public_marts: ROLLBACK
+[0m15:43:47.880420 [debug] [ThreadPool]: On list_oltp_public_intermediate: ROLLBACK
+[0m15:43:47.880808 [debug] [ThreadPool]: On list_oltp_public_staging: Close
+[0m15:43:47.881021 [debug] [ThreadPool]: On list_oltp_public_marts: Close
+[0m15:43:47.881185 [debug] [ThreadPool]: On list_oltp_public_intermediate: Close
+[0m15:43:47.884625 [debug] [MainThread]: Using postgres connection "master"
+[0m15:43:47.884878 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m15:43:47.885099 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:43:47.897684 [debug] [MainThread]: SQL status: SELECT 4 in 0.013 seconds
+[0m15:43:47.898610 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '836bc9d4-50b2-4700-80be-f5619b779585', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113b850d0>]}
+[0m15:43:47.898867 [debug] [MainThread]: On master: ROLLBACK
+[0m15:43:47.899252 [debug] [MainThread]: On master: COMMIT
+[0m15:43:47.899404 [debug] [MainThread]: Using postgres connection "master"
+[0m15:43:47.899536 [debug] [MainThread]: On master: COMMIT
+[0m15:43:47.900046 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m15:43:47.900209 [debug] [MainThread]: On master: Close
+[0m15:43:47.901979 [debug] [Thread-1 (]: Began running node test.dataops_project.accepted_values_stg_orders_status__pending__shipped__cancelled.0e024b50aa
+[0m15:43:47.902214 [debug] [Thread-2 (]: Began running node test.dataops_project.not_null_mart_orders_by_country_country.f0d2868c4a
+[0m15:43:47.902609 [debug] [Thread-3 (]: Began running node test.dataops_project.not_null_mart_orders_by_country_total_orders.84284cde26
+[0m15:43:47.902438 [info ] [Thread-1 (]: 1 of 11 START test accepted_values_stg_orders_status__pending__shipped__cancelled  [RUN]
+[0m15:43:47.902836 [debug] [Thread-4 (]: Began running node test.dataops_project.not_null_stg_customers_country.c13d2cd104
+[0m15:43:47.903080 [info ] [Thread-2 (]: 2 of 11 START test not_null_mart_orders_by_country_country ..................... [RUN]
+[0m15:43:47.903336 [info ] [Thread-3 (]: 3 of 11 START test not_null_mart_orders_by_country_total_orders ................ [RUN]
+[0m15:43:47.903601 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_oltp_public_staging, now test.dataops_project.accepted_values_stg_orders_status__pending__shipped__cancelled.0e024b50aa)
+[0m15:43:47.903809 [info ] [Thread-4 (]: 4 of 11 START test not_null_stg_customers_country .............................. [RUN]
+[0m15:43:47.904043 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_oltp_public_marts, now test.dataops_project.not_null_mart_orders_by_country_country.f0d2868c4a)
+[0m15:43:47.904747 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_oltp_public_intermediate, now test.dataops_project.not_null_mart_orders_by_country_total_orders.84284cde26)
+[0m15:43:47.904947 [debug] [Thread-1 (]: Began compiling node test.dataops_project.accepted_values_stg_orders_status__pending__shipped__cancelled.0e024b50aa
+[0m15:43:47.905221 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.dataops_project.not_null_stg_customers_country.c13d2cd104'
+[0m15:43:47.905437 [debug] [Thread-2 (]: Began compiling node test.dataops_project.not_null_mart_orders_by_country_country.f0d2868c4a
+[0m15:43:47.905629 [debug] [Thread-3 (]: Began compiling node test.dataops_project.not_null_mart_orders_by_country_total_orders.84284cde26
+[0m15:43:47.910391 [debug] [Thread-1 (]: Writing injected SQL for node "test.dataops_project.accepted_values_stg_orders_status__pending__shipped__cancelled.0e024b50aa"
+[0m15:43:47.910633 [debug] [Thread-4 (]: Began compiling node test.dataops_project.not_null_stg_customers_country.c13d2cd104
+[0m15:43:47.915400 [debug] [Thread-2 (]: Writing injected SQL for node "test.dataops_project.not_null_mart_orders_by_country_country.f0d2868c4a"
+[0m15:43:47.917578 [debug] [Thread-3 (]: Writing injected SQL for node "test.dataops_project.not_null_mart_orders_by_country_total_orders.84284cde26"
+[0m15:43:47.919717 [debug] [Thread-4 (]: Writing injected SQL for node "test.dataops_project.not_null_stg_customers_country.c13d2cd104"
+[0m15:43:47.920168 [debug] [Thread-2 (]: Began executing node test.dataops_project.not_null_mart_orders_by_country_country.f0d2868c4a
+[0m15:43:47.920365 [debug] [Thread-1 (]: Began executing node test.dataops_project.accepted_values_stg_orders_status__pending__shipped__cancelled.0e024b50aa
+[0m15:43:47.920547 [debug] [Thread-4 (]: Began executing node test.dataops_project.not_null_stg_customers_country.c13d2cd104
+[0m15:43:47.920745 [debug] [Thread-3 (]: Began executing node test.dataops_project.not_null_mart_orders_by_country_total_orders.84284cde26
+[0m15:43:47.930638 [debug] [Thread-2 (]: Writing runtime sql for node "test.dataops_project.not_null_mart_orders_by_country_country.f0d2868c4a"
+[0m15:43:47.931960 [debug] [Thread-1 (]: Writing runtime sql for node "test.dataops_project.accepted_values_stg_orders_status__pending__shipped__cancelled.0e024b50aa"
+[0m15:43:47.933302 [debug] [Thread-4 (]: Writing runtime sql for node "test.dataops_project.not_null_stg_customers_country.c13d2cd104"
+[0m15:43:47.934707 [debug] [Thread-3 (]: Writing runtime sql for node "test.dataops_project.not_null_mart_orders_by_country_total_orders.84284cde26"
+[0m15:43:47.935299 [debug] [Thread-2 (]: Using postgres connection "test.dataops_project.not_null_mart_orders_by_country_country.f0d2868c4a"
+[0m15:43:47.935523 [debug] [Thread-1 (]: Using postgres connection "test.dataops_project.accepted_values_stg_orders_status__pending__shipped__cancelled.0e024b50aa"
+[0m15:43:47.935733 [debug] [Thread-4 (]: Using postgres connection "test.dataops_project.not_null_stg_customers_country.c13d2cd104"
+[0m15:43:47.935923 [debug] [Thread-3 (]: Using postgres connection "test.dataops_project.not_null_mart_orders_by_country_total_orders.84284cde26"
+[0m15:43:47.936128 [debug] [Thread-2 (]: On test.dataops_project.not_null_mart_orders_by_country_country.f0d2868c4a: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "test.dataops_project.not_null_mart_orders_by_country_country.f0d2868c4a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select country
+from "oltp"."public_marts"."mart_orders_by_country"
+where country is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:43:47.936360 [debug] [Thread-1 (]: On test.dataops_project.accepted_values_stg_orders_status__pending__shipped__cancelled.0e024b50aa: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "test.dataops_project.accepted_values_stg_orders_status__pending__shipped__cancelled.0e024b50aa"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        status as value_field,
+        count(*) as n_records
+
+    from "oltp"."public_staging"."stg_orders"
+    group by status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'pending','shipped','cancelled'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:43:47.936567 [debug] [Thread-4 (]: On test.dataops_project.not_null_stg_customers_country.c13d2cd104: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "test.dataops_project.not_null_stg_customers_country.c13d2cd104"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select country
+from "oltp"."public_staging"."stg_customers"
+where country is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:43:47.936770 [debug] [Thread-3 (]: On test.dataops_project.not_null_mart_orders_by_country_total_orders.84284cde26: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "test.dataops_project.not_null_mart_orders_by_country_total_orders.84284cde26"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select total_orders
+from "oltp"."public_marts"."mart_orders_by_country"
+where total_orders is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:43:47.936963 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m15:43:47.937144 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:43:47.937317 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m15:43:47.937490 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m15:43:47.953276 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.016 seconds
+[0m15:43:47.953484 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.016 seconds
+[0m15:43:47.953662 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.016 seconds
+[0m15:43:47.953827 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.017 seconds
+[0m15:43:47.955960 [debug] [Thread-2 (]: On test.dataops_project.not_null_mart_orders_by_country_country.f0d2868c4a: ROLLBACK
+[0m15:43:47.956603 [debug] [Thread-3 (]: On test.dataops_project.not_null_mart_orders_by_country_total_orders.84284cde26: ROLLBACK
+[0m15:43:47.957207 [debug] [Thread-4 (]: On test.dataops_project.not_null_stg_customers_country.c13d2cd104: ROLLBACK
+[0m15:43:47.957787 [debug] [Thread-1 (]: On test.dataops_project.accepted_values_stg_orders_status__pending__shipped__cancelled.0e024b50aa: ROLLBACK
+[0m15:43:47.958511 [debug] [Thread-4 (]: On test.dataops_project.not_null_stg_customers_country.c13d2cd104: Close
+[0m15:43:47.958703 [debug] [Thread-2 (]: On test.dataops_project.not_null_mart_orders_by_country_country.f0d2868c4a: Close
+[0m15:43:47.958865 [debug] [Thread-1 (]: On test.dataops_project.accepted_values_stg_orders_status__pending__shipped__cancelled.0e024b50aa: Close
+[0m15:43:47.959042 [debug] [Thread-3 (]: On test.dataops_project.not_null_mart_orders_by_country_total_orders.84284cde26: Close
+[0m15:43:47.959331 [info ] [Thread-4 (]: 4 of 11 PASS not_null_stg_customers_country .................................... [[32mPASS[0m in 0.05s]
+[0m15:43:47.959644 [info ] [Thread-2 (]: 2 of 11 PASS not_null_mart_orders_by_country_country ........................... [[32mPASS[0m in 0.06s]
+[0m15:43:47.959909 [info ] [Thread-1 (]: 1 of 11 PASS accepted_values_stg_orders_status__pending__shipped__cancelled .... [[32mPASS[0m in 0.06s]
+[0m15:43:47.960164 [info ] [Thread-3 (]: 3 of 11 PASS not_null_mart_orders_by_country_total_orders ...................... [[32mPASS[0m in 0.06s]
+[0m15:43:47.960441 [debug] [Thread-4 (]: Finished running node test.dataops_project.not_null_stg_customers_country.c13d2cd104
+[0m15:43:47.960702 [debug] [Thread-2 (]: Finished running node test.dataops_project.not_null_mart_orders_by_country_country.f0d2868c4a
+[0m15:43:47.960957 [debug] [Thread-1 (]: Finished running node test.dataops_project.accepted_values_stg_orders_status__pending__shipped__cancelled.0e024b50aa
+[0m15:43:47.961187 [debug] [Thread-3 (]: Finished running node test.dataops_project.not_null_mart_orders_by_country_total_orders.84284cde26
+[0m15:43:47.961391 [debug] [Thread-4 (]: Began running node test.dataops_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:43:47.961607 [debug] [Thread-2 (]: Began running node test.dataops_project.not_null_stg_customers_segment.54e04798f3
+[0m15:43:47.961863 [debug] [Thread-1 (]: Began running node test.dataops_project.not_null_stg_orders_customer_id.af79d5e4b5
+[0m15:43:47.962089 [debug] [Thread-3 (]: Began running node test.dataops_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:43:47.962308 [info ] [Thread-4 (]: 5 of 11 START test not_null_stg_customers_customer_id .......................... [RUN]
+[0m15:43:47.962519 [info ] [Thread-2 (]: 6 of 11 START test not_null_stg_customers_segment .............................. [RUN]
+[0m15:43:47.962705 [info ] [Thread-1 (]: 7 of 11 START test not_null_stg_orders_customer_id ............................. [RUN]
+[0m15:43:47.962900 [info ] [Thread-3 (]: 8 of 11 START test not_null_stg_orders_order_id ................................ [RUN]
+[0m15:43:47.963112 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.dataops_project.not_null_stg_customers_country.c13d2cd104, now test.dataops_project.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m15:43:47.963298 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dataops_project.not_null_mart_orders_by_country_country.f0d2868c4a, now test.dataops_project.not_null_stg_customers_segment.54e04798f3)
+[0m15:43:47.963462 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dataops_project.accepted_values_stg_orders_status__pending__shipped__cancelled.0e024b50aa, now test.dataops_project.not_null_stg_orders_customer_id.af79d5e4b5)
+[0m15:43:47.963651 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.dataops_project.not_null_mart_orders_by_country_total_orders.84284cde26, now test.dataops_project.not_null_stg_orders_order_id.81cfe2fe64)
+[0m15:43:47.963832 [debug] [Thread-4 (]: Began compiling node test.dataops_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:43:47.964026 [debug] [Thread-2 (]: Began compiling node test.dataops_project.not_null_stg_customers_segment.54e04798f3
+[0m15:43:47.964225 [debug] [Thread-1 (]: Began compiling node test.dataops_project.not_null_stg_orders_customer_id.af79d5e4b5
+[0m15:43:47.964419 [debug] [Thread-3 (]: Began compiling node test.dataops_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:43:47.966928 [debug] [Thread-4 (]: Writing injected SQL for node "test.dataops_project.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m15:43:47.970988 [debug] [Thread-2 (]: Writing injected SQL for node "test.dataops_project.not_null_stg_customers_segment.54e04798f3"
+[0m15:43:47.973123 [debug] [Thread-1 (]: Writing injected SQL for node "test.dataops_project.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m15:43:47.975064 [debug] [Thread-3 (]: Writing injected SQL for node "test.dataops_project.not_null_stg_orders_order_id.81cfe2fe64"
+[0m15:43:47.975559 [debug] [Thread-2 (]: Began executing node test.dataops_project.not_null_stg_customers_segment.54e04798f3
+[0m15:43:47.975739 [debug] [Thread-4 (]: Began executing node test.dataops_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:43:47.977072 [debug] [Thread-2 (]: Writing runtime sql for node "test.dataops_project.not_null_stg_customers_segment.54e04798f3"
+[0m15:43:47.977280 [debug] [Thread-1 (]: Began executing node test.dataops_project.not_null_stg_orders_customer_id.af79d5e4b5
+[0m15:43:47.978519 [debug] [Thread-4 (]: Writing runtime sql for node "test.dataops_project.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m15:43:47.978721 [debug] [Thread-3 (]: Began executing node test.dataops_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:43:47.980018 [debug] [Thread-1 (]: Writing runtime sql for node "test.dataops_project.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m15:43:47.980309 [debug] [Thread-2 (]: Using postgres connection "test.dataops_project.not_null_stg_customers_segment.54e04798f3"
+[0m15:43:47.981583 [debug] [Thread-3 (]: Writing runtime sql for node "test.dataops_project.not_null_stg_orders_order_id.81cfe2fe64"
+[0m15:43:47.981821 [debug] [Thread-4 (]: Using postgres connection "test.dataops_project.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m15:43:47.982029 [debug] [Thread-2 (]: On test.dataops_project.not_null_stg_customers_segment.54e04798f3: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "test.dataops_project.not_null_stg_customers_segment.54e04798f3"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select segment
+from "oltp"."public_staging"."stg_customers"
+where segment is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:43:47.982295 [debug] [Thread-1 (]: Using postgres connection "test.dataops_project.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m15:43:47.982488 [debug] [Thread-4 (]: On test.dataops_project.not_null_stg_customers_customer_id.e2cfb1f9aa: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "test.dataops_project.not_null_stg_customers_customer_id.e2cfb1f9aa"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from "oltp"."public_staging"."stg_customers"
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:43:47.982686 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m15:43:47.982899 [debug] [Thread-3 (]: Using postgres connection "test.dataops_project.not_null_stg_orders_order_id.81cfe2fe64"
+[0m15:43:47.983101 [debug] [Thread-1 (]: On test.dataops_project.not_null_stg_orders_customer_id.af79d5e4b5: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "test.dataops_project.not_null_stg_orders_customer_id.af79d5e4b5"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from "oltp"."public_staging"."stg_orders"
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:43:47.983324 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m15:43:47.983594 [debug] [Thread-3 (]: On test.dataops_project.not_null_stg_orders_order_id.81cfe2fe64: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "test.dataops_project.not_null_stg_orders_order_id.81cfe2fe64"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select order_id
+from "oltp"."public_staging"."stg_orders"
+where order_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:43:47.983786 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:43:47.984024 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m15:43:47.999614 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.017 seconds
+[0m15:43:47.999817 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.016 seconds
+[0m15:43:47.999987 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.016 seconds
+[0m15:43:48.000157 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.017 seconds
+[0m15:43:48.000839 [debug] [Thread-2 (]: On test.dataops_project.not_null_stg_customers_segment.54e04798f3: ROLLBACK
+[0m15:43:48.001456 [debug] [Thread-3 (]: On test.dataops_project.not_null_stg_orders_order_id.81cfe2fe64: ROLLBACK
+[0m15:43:48.002044 [debug] [Thread-1 (]: On test.dataops_project.not_null_stg_orders_customer_id.af79d5e4b5: ROLLBACK
+[0m15:43:48.002621 [debug] [Thread-4 (]: On test.dataops_project.not_null_stg_customers_customer_id.e2cfb1f9aa: ROLLBACK
+[0m15:43:48.003881 [debug] [Thread-2 (]: On test.dataops_project.not_null_stg_customers_segment.54e04798f3: Close
+[0m15:43:48.004078 [debug] [Thread-4 (]: On test.dataops_project.not_null_stg_customers_customer_id.e2cfb1f9aa: Close
+[0m15:43:48.004260 [debug] [Thread-3 (]: On test.dataops_project.not_null_stg_orders_order_id.81cfe2fe64: Close
+[0m15:43:48.004421 [debug] [Thread-1 (]: On test.dataops_project.not_null_stg_orders_customer_id.af79d5e4b5: Close
+[0m15:43:48.004679 [info ] [Thread-2 (]: 6 of 11 PASS not_null_stg_customers_segment .................................... [[32mPASS[0m in 0.04s]
+[0m15:43:48.004978 [info ] [Thread-4 (]: 5 of 11 PASS not_null_stg_customers_customer_id ................................ [[32mPASS[0m in 0.04s]
+[0m15:43:48.005251 [info ] [Thread-3 (]: 8 of 11 PASS not_null_stg_orders_order_id ...................................... [[32mPASS[0m in 0.04s]
+[0m15:43:48.005503 [info ] [Thread-1 (]: 7 of 11 PASS not_null_stg_orders_customer_id ................................... [[32mPASS[0m in 0.04s]
+[0m15:43:48.005753 [debug] [Thread-2 (]: Finished running node test.dataops_project.not_null_stg_customers_segment.54e04798f3
+[0m15:43:48.005975 [debug] [Thread-4 (]: Finished running node test.dataops_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:43:48.006203 [debug] [Thread-3 (]: Finished running node test.dataops_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:43:48.006436 [debug] [Thread-1 (]: Finished running node test.dataops_project.not_null_stg_orders_customer_id.af79d5e4b5
+[0m15:43:48.006641 [debug] [Thread-2 (]: Began running node test.dataops_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m15:43:48.006882 [debug] [Thread-4 (]: Began running node test.dataops_project.unique_stg_customers_customer_id.c7614daada
+[0m15:43:48.007097 [debug] [Thread-3 (]: Began running node test.dataops_project.unique_stg_orders_order_id.e3b841c71a
+[0m15:43:48.007377 [info ] [Thread-2 (]: 9 of 11 START test relationships_stg_orders_customer_id__customer_id__ref_stg_customers_  [RUN]
+[0m15:43:48.007577 [info ] [Thread-4 (]: 10 of 11 START test unique_stg_customers_customer_id ........................... [RUN]
+[0m15:43:48.007766 [info ] [Thread-3 (]: 11 of 11 START test unique_stg_orders_order_id ................................. [RUN]
+[0m15:43:48.007971 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dataops_project.not_null_stg_customers_segment.54e04798f3, now test.dataops_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500)
+[0m15:43:48.008143 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.dataops_project.not_null_stg_customers_customer_id.e2cfb1f9aa, now test.dataops_project.unique_stg_customers_customer_id.c7614daada)
+[0m15:43:48.008307 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.dataops_project.not_null_stg_orders_order_id.81cfe2fe64, now test.dataops_project.unique_stg_orders_order_id.e3b841c71a)
+[0m15:43:48.008475 [debug] [Thread-2 (]: Began compiling node test.dataops_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m15:43:48.008646 [debug] [Thread-4 (]: Began compiling node test.dataops_project.unique_stg_customers_customer_id.c7614daada
+[0m15:43:48.008796 [debug] [Thread-3 (]: Began compiling node test.dataops_project.unique_stg_orders_order_id.e3b841c71a
+[0m15:43:48.011547 [debug] [Thread-2 (]: Writing injected SQL for node "test.dataops_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500"
+[0m15:43:48.014897 [debug] [Thread-4 (]: Writing injected SQL for node "test.dataops_project.unique_stg_customers_customer_id.c7614daada"
+[0m15:43:48.017032 [debug] [Thread-3 (]: Writing injected SQL for node "test.dataops_project.unique_stg_orders_order_id.e3b841c71a"
+[0m15:43:48.017523 [debug] [Thread-2 (]: Began executing node test.dataops_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m15:43:48.017719 [debug] [Thread-3 (]: Began executing node test.dataops_project.unique_stg_orders_order_id.e3b841c71a
+[0m15:43:48.017905 [debug] [Thread-4 (]: Began executing node test.dataops_project.unique_stg_customers_customer_id.c7614daada
+[0m15:43:48.020123 [debug] [Thread-2 (]: Writing runtime sql for node "test.dataops_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500"
+[0m15:43:48.021346 [debug] [Thread-3 (]: Writing runtime sql for node "test.dataops_project.unique_stg_orders_order_id.e3b841c71a"
+[0m15:43:48.022552 [debug] [Thread-4 (]: Writing runtime sql for node "test.dataops_project.unique_stg_customers_customer_id.c7614daada"
+[0m15:43:48.022930 [debug] [Thread-2 (]: Using postgres connection "test.dataops_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500"
+[0m15:43:48.023175 [debug] [Thread-2 (]: On test.dataops_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "test.dataops_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select customer_id as from_field
+    from "oltp"."public_staging"."stg_orders"
+    where customer_id is not null
+),
+
+parent as (
+    select customer_id as to_field
+    from "oltp"."public_staging"."stg_customers"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:43:48.023402 [debug] [Thread-3 (]: Using postgres connection "test.dataops_project.unique_stg_orders_order_id.e3b841c71a"
+[0m15:43:48.023606 [debug] [Thread-4 (]: Using postgres connection "test.dataops_project.unique_stg_customers_customer_id.c7614daada"
+[0m15:43:48.023809 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m15:43:48.024005 [debug] [Thread-3 (]: On test.dataops_project.unique_stg_orders_order_id.e3b841c71a: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "test.dataops_project.unique_stg_orders_order_id.e3b841c71a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    order_id as unique_field,
+    count(*) as n_records
+
+from "oltp"."public_staging"."stg_orders"
+where order_id is not null
+group by order_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:43:48.024203 [debug] [Thread-4 (]: On test.dataops_project.unique_stg_customers_customer_id.c7614daada: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dataops_project", "target_name": "dev", "node_id": "test.dataops_project.unique_stg_customers_customer_id.c7614daada"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    customer_id as unique_field,
+    count(*) as n_records
+
+from "oltp"."public_staging"."stg_customers"
+where customer_id is not null
+group by customer_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:43:48.024439 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m15:43:48.024615 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m15:43:48.039982 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.016 seconds
+[0m15:43:48.040224 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.016 seconds
+[0m15:43:48.041076 [debug] [Thread-3 (]: On test.dataops_project.unique_stg_orders_order_id.e3b841c71a: ROLLBACK
+[0m15:43:48.041268 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.017 seconds
+[0m15:43:48.042021 [debug] [Thread-4 (]: On test.dataops_project.unique_stg_customers_customer_id.c7614daada: ROLLBACK
+[0m15:43:48.042712 [debug] [Thread-2 (]: On test.dataops_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500: ROLLBACK
+[0m15:43:48.042895 [debug] [Thread-3 (]: On test.dataops_project.unique_stg_orders_order_id.e3b841c71a: Close
+[0m15:43:48.043312 [info ] [Thread-3 (]: 11 of 11 PASS unique_stg_orders_order_id ....................................... [[32mPASS[0m in 0.03s]
+[0m15:43:48.043537 [debug] [Thread-2 (]: On test.dataops_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500: Close
+[0m15:43:48.043712 [debug] [Thread-4 (]: On test.dataops_project.unique_stg_customers_customer_id.c7614daada: Close
+[0m15:43:48.043988 [debug] [Thread-3 (]: Finished running node test.dataops_project.unique_stg_orders_order_id.e3b841c71a
+[0m15:43:48.044275 [info ] [Thread-2 (]: 9 of 11 PASS relationships_stg_orders_customer_id__customer_id__ref_stg_customers_  [[32mPASS[0m in 0.04s]
+[0m15:43:48.044578 [info ] [Thread-4 (]: 10 of 11 PASS unique_stg_customers_customer_id ................................. [[32mPASS[0m in 0.04s]
+[0m15:43:48.044951 [debug] [Thread-2 (]: Finished running node test.dataops_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m15:43:48.045263 [debug] [Thread-4 (]: Finished running node test.dataops_project.unique_stg_customers_customer_id.c7614daada
+[0m15:43:48.046109 [debug] [MainThread]: On master: COMMIT
+[0m15:43:48.046263 [debug] [MainThread]: Using postgres connection "master"
+[0m15:43:48.046393 [debug] [MainThread]: On master: COMMIT
+[0m15:43:48.046521 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:43:48.054800 [debug] [MainThread]: SQL status: COMMIT in 0.008 seconds
+[0m15:43:48.055111 [debug] [MainThread]: On master: Close
+[0m15:43:48.055362 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:43:48.055499 [debug] [MainThread]: Connection 'test.dataops_project.not_null_stg_orders_customer_id.af79d5e4b5' was properly closed.
+[0m15:43:48.055624 [debug] [MainThread]: Connection 'test.dataops_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500' was properly closed.
+[0m15:43:48.055748 [debug] [MainThread]: Connection 'test.dataops_project.unique_stg_orders_order_id.e3b841c71a' was properly closed.
+[0m15:43:48.055869 [debug] [MainThread]: Connection 'test.dataops_project.unique_stg_customers_customer_id.c7614daada' was properly closed.
+[0m15:43:48.056069 [info ] [MainThread]: 
+[0m15:43:48.056251 [info ] [MainThread]: Finished running 11 data tests in 0 hours 0 minutes and 0.68 seconds (0.68s).
+[0m15:43:48.057187 [debug] [MainThread]: Command end result
+[0m15:43:48.077196 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m15:43:48.078250 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m15:43:48.081798 [debug] [MainThread]: Wrote artifact RunExecutionResult to ./target/run_results.json
+[0m15:43:48.081970 [info ] [MainThread]: 
+[0m15:43:48.082170 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:43:48.082330 [info ] [MainThread]: 
+[0m15:43:48.082505 [info ] [MainThread]: Done. PASS=11 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=11
+[0m15:43:48.082840 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m15:43:48.168114 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 3.7946959, "process_in_blocks": "0", "process_kernel_time": 0.233137, "process_mem_max_rss": "145862656", "process_out_blocks": "0", "process_user_time": 1.471569}
+[0m15:43:48.168476 [debug] [MainThread]: Command `dbt test` succeeded at 15:43:48.168413 after 3.80 seconds
+[0m15:43:48.168709 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c21cf10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c21d010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c35d550>]}
+[0m15:43:48.168911 [debug] [MainThread]: Flushing usage events
+[0m15:43:48.684984 [debug] [MainThread]: An error was encountered while trying to flush usage events

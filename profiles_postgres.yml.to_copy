@@ -1,0 +1,12 @@
+dataops_project:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: dataops
+      password: dataops
+      port: 5433
+      dbname: oltp
+      schema: public
+      threads: 4

@@ -1,0 +1,8 @@
+dataops_project:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: dataops.duckdb
+      schema: public
+      threads: 4
